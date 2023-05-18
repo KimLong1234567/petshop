@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <a href="user/login.php"> user login</a>
+    <a href="user/sign_up.php">Đăng Ký</a>
+    <a href="user/sign_in.php">Đăng nhập</a>
 </body>
 </html>

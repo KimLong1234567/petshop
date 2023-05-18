@@ -6,11 +6,12 @@
         $phone = $_POST["phone"];
         $address = $_POST["address"];
 
-        $que = "select user_phone from users where user_phone = '$phone'";
-        $result = mysqli_query($con, $que);
+        $que = "select user_phone from users where user_name = '$username'";
+        $result = mysqli_query($con, $que);//sử dụng hàm mysqli_query() để thực thi truy vấn SQL trên kết nối cơ sở dữ liệu $con. Kết quả trả về từ truy vấn này được gán cho biến $result.
 
-        $num = mysqli_num_rows($result);
+        $num = mysqli_num_rows($result);// sử dụng hàm mysqli_num_rows() để đếm số hàng trả về từ kết quả truy vấn $result. Số hàng này là số lượng người dùng có số điện thoại tương ứng với $phone.
     
+        // num = 1 tìm thấy một tài khoản hoặc số điện thoại đã tồn tại trong cơ sở dữ liệu
         if ($num == 1){
             $message = "This account or phone number already exist, Please check it again!";
             echo "<script type='text/javascript'>alert('$message');</script>";
@@ -28,7 +29,7 @@
 <html>
     <body>
         <p>Đăng ký</p>
-        <form action="login.php" method="POST">
+        <form action="sign_up.php" method="POST">
             Name:
             <input type="text" name="name"/>
             Password:

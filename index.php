@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    include 'header.php'
+    include 'header.php';
 ?>
 <head>
     <meta charset="UTF-8">
@@ -12,4 +12,7 @@
 <body>
     <p>Hello</p>
 </body>
+<?php
+    include 'footer.php'
+?>
 </html>
