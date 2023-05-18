@@ -8,5 +8,6 @@
 <body>
     <a href="user/sign_up.php">Đăng Ký</a>
     <a href="user/sign_in.php">Đăng nhập</a>
+    <a href="admin/login.php">ADMIN</a>
 </body>
 </html>
