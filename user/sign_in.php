@@ -10,7 +10,7 @@ require_once "../connect.php";
         $num = mysqli_num_rows($result);// thực hiện câu truy vấn đăng nhập với user
         
         if($num == 1){
-            $_SESSION["account_name"] = $username;
+            $_SESSION["user_name"] = $username;
             header("location: ../index.php");
         }
         else{
@@ -21,14 +21,26 @@ require_once "../connect.php";
 ?>
 
 <html>
+    <head>
+        <!--
+        <link rel="stylesheet " href="../asset/css/user_login.css">
+        -->
+    </head>
     <body>
-        <p>Đăng nhập</p>
-            <form action="sign_in.php" method = "POST">
-                Name: 
-                <input type="text" name="name"/>
-                Password:
-                <input type="password" name="password"/>
+
+        <form action="sign_in.php" method = "POST">
+            <h3 class="heading">Thành viên đăng nhập</h3>
+            <div class="form-group">
+                <label for="fullname" class="form-label">User Name</label>
+                <input id="fullname" type="text" name="name" placeholder="VD: KimLong" class="form-control">
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input id="password" type="password" placeholder="Nhập mật khẩu" name="password"  class="form-control">
+                <span class="form-message"></span>
+            </div>
                 <button class="btn" name="login">Đăng Nhập</button>
-            </form>
+        </form>
     </body>
 </html>

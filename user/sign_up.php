@@ -52,11 +52,6 @@
                 <span class="form-message"></span>
             </div>
             <div class="form-group">
-                <label for="email" class="form-label">Email</label>
-                <input id="email" name="email" type="text" placeholder="VD: email@domain.com" class="form-control">
-                <span class="form-message"></span>
-            </div>
-            <div class="form-group">
                 <label for="phone" class="form-label">Phone:</label>
                 <input id = "phone" type="number" placeholder="Nhập số điện thoại" name="phone" class="form-control">
                 <span class="form-message"></span>
@@ -69,7 +64,7 @@
         </form>
 
     </div>    
-
+    <!--
     <script src="../js/validator.js"></script>
     <script>
         Validator({
@@ -80,6 +75,6 @@
             ]
         });
     </script>
-
+    -->
     </body>
 </html>
