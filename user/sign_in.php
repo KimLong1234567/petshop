@@ -22,14 +22,15 @@ require_once "../connect.php";
 
 <html>
     <head>
-        <!--
+        
         <link rel="stylesheet " href="../asset/css/user_login.css">
-        -->
+    
     </head>
     <body>
-
-        <form action="sign_in.php" method = "POST">
+        <form action="sign_in.php" method = "POST" class="form" id="form-1">
             <h3 class="heading">Thành viên đăng nhập</h3>
+            <div class="spacer"></div>
+
             <div class="form-group">
                 <label for="fullname" class="form-label">User Name</label>
                 <input id="fullname" type="text" name="name" placeholder="VD: KimLong" class="form-control">
@@ -40,7 +41,21 @@ require_once "../connect.php";
                 <input id="password" type="password" placeholder="Nhập mật khẩu" name="password"  class="form-control">
                 <span class="form-message"></span>
             </div>
-                <button class="btn" name="login">Đăng Nhập</button>
+                <button class="form-submit" name="login">Đăng Nhập</button>
         </form>
+        <script src="../js/validator.js"></script>
+    <script>
+        Validator({
+            form: '#form-1',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#fullname', 'Vui lòng nhập username'),
+                Validator.minLength('#password',6),
+                Validator.isConfirmed('#password_confirmation', function(){
+                    return document.querySelector('#form-1 #password').value;
+                }, 'Mật khẩu nhập lại không chính xác'),
+            ]
+        });
+    </script>
     </body>
 </html>
