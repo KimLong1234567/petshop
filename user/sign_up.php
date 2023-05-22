@@ -5,6 +5,7 @@
         $password = hash("sha256" ,$_POST["password"]);
         $phone = $_POST["phone"];
         $address = $_POST["address"];
+        $email = $_POST["email"];
 
         $que = "select user_phone from users where user_name = '$username'";
         $result = mysqli_query($con, $que);//sử dụng hàm mysqli_query() để thực thi truy vấn SQL trên kết nối cơ sở dữ liệu $con. Kết quả trả về từ truy vấn này được gán cho biến $result.
@@ -17,7 +18,7 @@
             echo "<script type='text/javascript'>alert('$message');</script>";
         }
         else{
-            $sql = "insert into users (user_name, user_password, user_phone, user_address) values ('$username', '$password', '$phone', '$address')";
+            $sql = "insert into users (user_name, user_password, user_phone, user_address, user_email)  values ('$username', '$password', '$phone', '$address', '$email')";
             mysqli_query($con, $sql);
             $ms = "Registration Successful";
             echo "<script>alert('$ms');location.href='../index.php'</script>";
@@ -57,24 +58,37 @@
                 <span class="form-message"></span>
             </div>
             <div class="form-group">
+                <label for="email" class="form-label">Email:</label>
+                <input id = "email" type="text" placeholder="Nhập email" name="email" class="form-control">
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
                 <label for="address" class="form-label">Address:</label>
-                <input type="text" placeholder="Nhập địa chỉ" name="address" class="form-control">
+                <input id="address" type="text" placeholder="Nhập địa chỉ" name="address" class="form-control">
+                <span class="form-message"></span>
             </div>
                 <button class="form-submit" name="submit">Đăng ký</button>
         </form>
 
     </div>    
-    <!--
+    
     <script src="../js/validator.js"></script>
     <script>
         Validator({
-            form: '#form1',
+            form: '#form-1',
+            errorSelector: '.form-message',
             rules: [
-                Validator.isRequired('#fullname'),
-                Validator.isEmail('#email'),
+                Validator.isRequired('#fullname', 'Vui lòng nhập username'),
+                Validator.isEmail('#email', 'Vui lòng nhập email'),
+                Validator.minLength('#password',6),
+                Validator.isConfirmed('#password_confirmation', function(){
+                    return document.querySelector('#form-1 #password').value;
+                }, 'Mật khẩu nhập lại không chính xác'),
+                Validator.isRequired('#phone', 'Vui lòng nhập số điện thoại'),
+                Validator.isRequired('#address', 'Vui lòng nhập địa chỉ'),
             ]
         });
     </script>
-    -->
+
     </body>
 </html>
