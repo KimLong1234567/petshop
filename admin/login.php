@@ -22,11 +22,15 @@
 ?>
 
 <html>
+    <head>
+        <link rel="stylesheet " href="../asset/css/user_login.css">
+    </head>
     <body>
-    <form action="login.php" method = "POST">
-            <h3 class="heading">Admin login</h3>
+    <form action="adminProductMange.php" method = "POST" class="form" id="form-1">
+            <h3 class="heading">ADMIN đăng nhập</h3>
+            <div class="spacer"></div>
             <div class="form-group">
-                <label for="fullname" class="form-label">Admin Name</label>
+                <label for="fullname" class="form-label">ADMIN Name</label>
                 <input id="fullname" type="text" name="admin_name" placeholder="VD: KimLong" class="form-control">
                 <span class="form-message"></span>
             </div>
@@ -35,6 +39,18 @@
                 <input id="password" type="password" placeholder="Nhập mật khẩu" name="admin_password"  class="form-control">
                 <span class="form-message"></span>
             </div>
-                <button class="btn" name="login_admin">Đăng Nhập</button>
+                <button class="form-submit" name="login_admin">Đăng Nhập</button>
+        </form>
+        <script src="../js/validator.js"></script>
+    <script>
+        Validator({
+            form: '#form-1',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#fullname', 'Vui lòng nhập ADMIN name'),
+                Validator.minLength('#password',6),
+            ]
+        });
+    </script>
     </body>
 </html>

@@ -30,7 +30,6 @@ require_once "../connect.php";
         <form action="sign_in.php" method = "POST" class="form" id="form-1">
             <h3 class="heading">Thành viên đăng nhập</h3>
             <div class="spacer"></div>
-
             <div class="form-group">
                 <label for="fullname" class="form-label">User Name</label>
                 <input id="fullname" type="text" name="name" placeholder="VD: KimLong" class="form-control">
@@ -51,9 +50,6 @@ require_once "../connect.php";
             rules: [
                 Validator.isRequired('#fullname', 'Vui lòng nhập username'),
                 Validator.minLength('#password',6),
-                Validator.isConfirmed('#password_confirmation', function(){
-                    return document.querySelector('#form-1 #password').value;
-                }, 'Mật khẩu nhập lại không chính xác'),
             ]
         });
     </script>
