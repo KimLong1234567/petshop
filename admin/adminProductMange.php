@@ -1,5 +1,9 @@
 <?php
     include '../connect.php';
+
+    $sql_show_prd = "SELECT * FROM pet_product";
+    $query_show_prd = mysqli_query($con,$sql_show_prd);
+    
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +21,9 @@
         <nav>
             <div class="nav-links">
                 <ul>
-                    <li><a href="adminProductMange.php">Manage product</a></li>
-                    <li><a href="">Manage customer</a></li>
+                    <li><a href="">Manage Pet</a></li>
+                    <li><a href="adminProductMange.php">Manage Products</a></li>
+                    <li><a href="">Manage Users</a></li>
                     <li><a href="logout.php">Log out</a></li>
                 </ul>
             </div>
@@ -29,23 +34,44 @@
                 <h3 class="menu">List of product</h3>
             </div>
             <div class="col col-xs-5 text-right">
-                <a href=""><button type="button" class="">Add new product</button></a>
+                <a href="addProducts.php"><button type="button" class="add">Add new product</button></a>
             </div>
         <fieldset>
         <div class="container">
-            <table class="table table-success table-striped">
-		        <thead>
-			    <tr>
-				    <th>Name</th>
-				    <th>Code</th>
-				    <th>Detail</th>
-				    <th>Price</th>
-				    <th>Origin</th>
-                    <th>Image</th>
-                    <th>Quantity</th>
-			    </tr>
-		        </thead>
-	        </table>
+            <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="table-success" scope="col">STT</th>
+                            <th class="table-success" scope="col">Name</th>
+                            <th class="table-success" scope="col">Code</th>
+                            <th class="table-success" scope="col">Detail</th>
+                            <th class="table-success" scope="col">Price</th>
+                            <th class="table-success" scope="col">Origin</th>
+                            <th class="table-success" scope="col">Image</th>
+                            <th class="table-success" scope="col">Quantity</th>
+                            <th class="table-success" scope="col">Delete</th>
+                        </tr>
+                    <?php
+                        $i = 1;
+                            while($row = mysqli_fetch_assoc($query_show_prd)){ ?>
+                                    <tr>
+                                        <td scope="row"><?php echo $i++; ?></td>
+                                        <td><?php echo $row['pet_prod_name'] ?></td>
+                                        <td><?php echo $row['pet_prod_id'] ?></td>
+                                        <td><?php echo $row['pet_prod_detail']?></td>
+                                        <td><?php echo $row['pet_prod_price']?></td>
+                                        <td><?php echo $row['pet_prod_origin'] ?></td>
+                                        <td><img src="../asset/img/<?php echo $row['pet_prod_image']?>"> </td>
+                                        <td><?php echo $row['pet_prod_quantity'] ?></td>
+                                        <td><a href="delete_product.php ?id=<?php echo $row['pet_prod_id'] ?>"><button
+                                                type="button" class="btn btn-sm btn-primary btn-create">Delete
+                                                product</button></a></td>
+                                    </tr>
+                                    <?php
+                        }
+                    ?>
+                    </thead>
+                </table>
         </div>   
         </fieldset>     
 </body> 

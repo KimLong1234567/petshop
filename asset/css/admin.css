@@ -25,4 +25,11 @@
     color: rgb(74, 84, 138);
 }
 
+.add{
+    text-align: end;
+}
 
+.container td img{
+    width: 160px;
+    height: 160px;
+}
