@@ -3,7 +3,6 @@
 
     $sql_show_prd = "SELECT * FROM pet_product";
     $query_show_prd = mysqli_query($con,$sql_show_prd);
-    
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +48,7 @@
                             <th class="table-success" scope="col">Origin</th>
                             <th class="table-success" scope="col">Image</th>
                             <th class="table-success" scope="col">Quantity</th>
+                            <th class="table-success" scope="col">Update</th>
                             <th class="table-success" scope="col">Delete</th>
                         </tr>
                     <?php
@@ -63,8 +63,11 @@
                                         <td><?php echo $row['pet_prod_origin'] ?></td>
                                         <td><img src="../asset/img/<?php echo $row['pet_prod_image']?>"> </td>
                                         <td><?php echo $row['pet_prod_quantity'] ?></td>
+                                        <td><a href="update_product.php ?id=<?php echo $row['pet_prod_id'] ?>"><button
+                                                type="button" class="btn btn-sm btn-primary btn-create">Update
+                                                product</button></a></td>
                                         <td><a href="delete_product.php ?id=<?php echo $row['pet_prod_id'] ?>"><button
-                                                type="button" class="btn btn-sm btn-primary btn-create">Delete
+                                                type="button" class="btn btn-sm btn-danger btn-create">Delete
                                                 product</button></a></td>
                                     </tr>
                                     <?php
