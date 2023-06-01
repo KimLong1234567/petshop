@@ -1,0 +1,13 @@
+.carousel-inner img {
+    width: 100%;
+    height: 700px;
+  }
+body{
+  background-image: url('../img/828062.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+h2{
+    color: aqua;
+}

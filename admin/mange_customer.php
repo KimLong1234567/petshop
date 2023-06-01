@@ -71,7 +71,8 @@ include("../connect.php");
                                     <td>'.$row['user_phone'].'</td>
                                     <td>'.$row['user_address'].'</td>
                                     <td>'.$row['user_email'].'</td>
-                                    <td><a href="detail_order.php?id='.$row['user_id'].'">view</a></td>                                
+                                    <td><a href="detail_order.php?id='.$row['user_id'].'">view</a></td>
+                                    <td><a href="delete_user.php?id='.$row['user_id'].'">Delete</td>                        
                                 </tr>';
                                         }
                                     }
