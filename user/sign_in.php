@@ -2,15 +2,23 @@
 session_start();
 require_once "../connect.php";
 
-    if(isset($_POST['login'])){
+    if(isset($_POST['submit'])){
         $username = $_POST["name"];
         $password = hash("sha256" ,$_POST["password"]);
-        $user_check = "select user_name, user_password from users where user_name = '$username' && user_password = '$password'";
-        $result = mysqli_query($con, $user_check);
+        $user_check = "SELECT user_id, user_name, user_password,user_phone from users where user_name = '$username' AND user_password = '$password'";
+        $result = $con->query($user_check);
+        // $result = mysqli_query($con, $user_check);
         $num = mysqli_num_rows($result);// thực hiện câu truy vấn đăng nhập với user
-        
+        foreach($result as $r){
+            $sdt =$r['user_phone'];
+            $id_kh =$r['user_id'];
+            $name =$r['user_name'];
+        }
         if($num == 1){
             $_SESSION["user_name"] = $username;
+            setcookie("userId", $id_kh, time() + 86400, "/");
+            setcookie("userName", $name, time() + 86400, "/");
+            setcookie("userPhone", $sdt, time() + 86400, "/");
             header("location: ../index.php");
         }
         else{
@@ -40,7 +48,7 @@ require_once "../connect.php";
                 <input id="password" type="password" placeholder="Nhập mật khẩu" name="password"  class="form-control">
                 <span class="form-message"></span>
             </div>
-                <button class="form-submit" name="login">Đăng Nhập</button>
+                <button class="form-submit" name="submit">Đăng Nhập</button>
         </form>
         <script src="../js/validator.js"></script>
     <script>

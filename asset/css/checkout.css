@@ -1,0 +1,91 @@
+.content{
+    width: 780px;
+    margin: auto;
+}
+h1 {
+    text-align: center;
+    border: 2px groove #96e985;
+    font-family: Tahoma;
+    text-transform: uppercase;
+    font-size: 35px;
+    padding: 10px;
+    color: #FFF;
+    background: -webkit-radial-gradient(center, ellipse cover, #48da43 0%,#a9db92 44%,#155509 100%);
+    background-image: radial-gradient(ellipse at center center , #fefeff 0%, #d0e95f 44%, #b8e735 100%);
+    text-shadow: 1px 2px 2px #88ce38;
+}
+fieldset {
+    text-align: center;
+    display: block;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding-block-start: 0.35em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    padding-block-end: 0.625em;
+    min-inline-size: min-content;
+    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;
+    font-size: 1rem;
+}
+label{
+    
+        padding: 0;
+        display: block;
+        padding: 10px;
+        font-family: tahoma;
+        border: 4px;
+    
+}
+input[type="text"], input[type="email"] {
+    width: 350px;
+    height: 30px;
+}
+user agent stylesheet
+input[type="text" i] {
+    padding: 1px 2px;
+}
+user agent stylesheet
+input {
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: textfield;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+input[type="submit"], input[type="reset"] {
+    background: none;
+    padding: 5px 15px;
+    border: 2px solid #98da4e;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+input[type="submit" i] {
+    appearance: auto;
+    user-select: none;
+    white-space: pre;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: -internal-light-dark(black, white);
+    box-sizing: border-box;
+
+}
