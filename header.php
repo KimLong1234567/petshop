@@ -15,22 +15,23 @@
 <body>
 <div class="container-fluid border">
         <div class="row"> 
-            <div class="col-sm 4">
+            <div class="col-sm ">
                 <h1><a href="index.php"><img src="./asset/img/logo.jpg"/></a></h1>
             </div>
-            <div class="col-sm 4">
+            <div class="col-sm ">
                 <form method="GET" action="search.php" class="">
                     <input type="text" class="" placeholder="Enter to search for products">
                 </form>
             </div>
-            <div class="col-sm 4 d-flex align-items-center justify-content-end ">
+            <div class="col-lg 5 d-flex align-items-center justify-content-end ">
                 <div class="d-flex">  
                     <a class="p-2 bg-primary text-light border border-info rounded-left" href="./index.php">Trang chủ</a>
                     <a class="p-2 bg-primary text-light border border-info" href="./user/sign_up.php">Đăng Ký</a>
                     <a class="p-2 bg-primary text-light border border-info" href="./user/sign_in.php">Đăng nhập</a>
                     <a class="p-2 bg-primary text-light border border-info" href="./admin/login.php">ADMIN</a>
                     <a class="p-2 bg-primary text-light border border-info" href="./view_cart.php">Cart</a>
-                    <a class="p-2 bg-primary text-light border border-info rounded-right" href="">Liên hệ</a>
+                    <a class="p-2 bg-primary text-light border border-info" href="">Liên hệ</a>
+                    <a class="p-2 bg-primary text-light border border-info rounded-right" href="./user/logout.php">Log out</a>
                 </div>
             </div>
         </div>
