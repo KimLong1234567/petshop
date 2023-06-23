@@ -17,11 +17,20 @@
         require "./connect.php";
         include "./header.php";
         $userId = $_COOKIE['userId'];
-        $sql =  "SELECT o.order_total, o.order_numberOfItem, p.pet_prod_name, p.pet_prod_origin, p.pet_prod_image, 
-        p.pet_prod_price, p.pet_prod_quantity, p.pet_prod_id
-        FROM orders AS o, pet_product AS p WHERE o.pet_prod_id = p.pet_prod_id AND o.user_id = '$userId'";
-        $que = $con->query($sql);
-        $i=1;
+        if($userId != ""){
+            $sql =  "SELECT o.order_total, o.order_numberOfItem, p.pet_prod_name, p.pet_prod_origin, p.pet_prod_image, 
+            p.pet_prod_price, p.pet_prod_quantity, p.pet_prod_id, o.Status
+            FROM orders AS o, pet_product AS p WHERE o.pet_prod_id = p.pet_prod_id AND o.user_id = '$userId'";
+            $que = $con->query($sql);
+            $i=1;
+            $r = mysqli_fetch_assoc($que);
+            if($r['Status'] != '0'){
+                echo "<script>alert('Your cart is empty');location.href='./index.php'</script>";
+            }
+        }
+        else{
+            echo "<script>alert('You not login yet');location.href='./user/sign_in.php'</script>";
+        }
     ?>
 
 
@@ -75,11 +84,11 @@
         </table>
        
         <div class="container">
-            <table >
+            <table class="d-flex justify-content-end" >
                 <tr>
-                    <td>Total</td>
+                    <td>Total:</td>
                     <td>
-                        <div class="d-flex justify-content-end">
+                        <div >
                         <?php
                             function total_price($que){
                                 $total = 0;
@@ -95,7 +104,7 @@
             </table>
         </div>
         <br>
-        <a href="./user/checkout.php"><h3 style="text-align: right; color:red">Check out</h3></a>
+        <a href="./user/checkout.php"><h3 style="text-align: right; color:red">PAYMENTS</h3></a>
     </div>
 
 </body>

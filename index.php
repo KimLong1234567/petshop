@@ -101,11 +101,21 @@
             </a>
         </div>
     <hr/>
-    <h2 class="mt3 row justify-content-center">Tất cả sản phẩm</h2>
+    <h2 class="mt3 row justify-content-center">ALL PRODUCT</h2>
     <div class="container-xs">
         <div class="row justify-content-center">
             <div class="col-2 text-primary" align="center">
-                Categories here
+                All Category
+                </br>
+                <div>
+                    <a href="">DOG</a> 
+                </div>
+                <div>
+                    <a href="">CAT</a>
+                </div>
+                <div>
+                    <a href="">Other</a>
+                </div>
             </div>
             <div class="col-10 ">
                 <div class="row">

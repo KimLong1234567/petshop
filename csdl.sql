@@ -98,4 +98,6 @@ ADD user_email varchar(255);
 ALTER TABLE users
 ADD UNIQUE (user_email);
 
+ALTER TABLE `orders` CHANGE `order_date` `order_date` DATETIME NULL DEFAULT NULL;
+
 INSERT into admin (admin_name, admin_password) VALUES ("admin","admin"); 

@@ -10,39 +10,59 @@
 </head>
 
 <body>
+    <?php
+
+        require "../connect.php";
+        $userId = $_COOKIE['userId'];
+        $sql = "SELECT * FROM users WHERE user_id = '$userId'";
+
+        $sql_cart =  "SELECT o.order_total, o.order_numberOfItem, p.pet_prod_name, p.pet_prod_origin, p.pet_prod_image, 
+        p.pet_prod_price, p.pet_prod_quantity, p.pet_prod_id
+        FROM orders AS o, pet_product AS p WHERE o.pet_prod_id = p.pet_prod_id AND o.user_id = '$userId'";
+        $que = $con->query($sql_cart);
+
+        $res = $con->query($sql);
+        $r = mysqli_fetch_assoc($res);
+        // var_dump($res);
+       
+    ?>
     <div class="container">
-        <form action="finishpaid.php" method="POST">
-            <div class="content">
-                <h1>Check out</h1>
-                <form action="" method="post">
+        <div class="content">
+            <h1>Check out</h1>
+                <form action="finishpaid.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Personal information :</legend>
-
-
                         <label>Your full name* : </label>
-                        <input type="text" name="f-name" required>
+                        <input type="text" name="f-name" value="<?php echo $r['user_name']; ?>">
 
                         <label>Your address *: </label>
-                        <input type="text" name="l-name" required>
+                        <input type="text" name="l-address" value="<?php echo $r['user_address']; ?>">
 
                         <label>Your phone* : </label>
-                        <input type="text" name="phone" required>
+                        <input type="text" name="phone" value="<?php echo $r['user_phone'];?>">
+
+                        <label>Your email* : </label>
+                        <input type="text" name="email" value="<?php echo $r['user_email'];?>">
                         <br>
                         Total Price:
-                        <?php session_start(); $ord = (isset($_SESSION['add_cart']))? $_SESSION['add_cart'] : []; ?>
-                        <?php   
-                require_once "total_price.php";
-                $tong = total_price($ord)    ;
-                echo $tong?>
+                        <?php
+                            function total_price($que){
+                                $total = 0;
+                                foreach($que as $key => $value){
+                                    $total += $value['order_total'];
+                                }
+                                return $total;
+                            };
+                            echo total_price($que);
+                        ?>
+                        
                         <br>
                         <input type="submit" name="submit" value="Submit your information form">
-                        <a href="checkout.php">
-                            <input type="reset" value="reset">
-
-                        </a>
+                        
                     </fieldset>
-
-
+                </form>
+        </div>
+    </div>
 
 </body>
 

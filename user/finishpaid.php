@@ -1,43 +1,21 @@
 <?php 
-session_start();
 require_once "../connect.php";
-        if ($con->connect_error) {
-            die('Cannot Connection!');
-        }
-        
-        if (isset($_POST['submit'])) { // kiểm tra nếu người dùng đã submit thì đưa thông tin order lên db để admin quản lý
+    $userId = $_COOKIE['userId'];
 
-            $fullname = $_POST["f-name"];
-            $address = $_POST["l-name"];
-            $phone = $_POST["phone"];
-
-            // $s = " insert into order_prod (order_prod_name, order_address , order_phone, order_time) values ('$fullname', '$address', '$phone', CURRENT_TIMESTAMP());";
-            
-
-            
-        
-        $product = (isset($_SESSION['add_cart']))? $_SESSION['add_cart'] : [];
-        // echo $s.'<br>';
-        mysqli_begin_transaction($con);   
-        $result = mysqli_query($con, $s);
-        $od_id = mysqli_insert_id($con);
-        foreach($product as $key => $value):
-        
-            $name = $value['pet_prod_name'];
-            $price = $value['pet_prod_price'];
-            $img = $value['pet_prod_image'];
-            
-
-        //  $p = "insert into order_detail(order_id, prod_name, prod_price, prod_image) values ( $od_id,'$name', '$price', '$img')";
-         $result = mysqli_query($con, $p) ; 
-
-        // echo $p.'<br>';
-
-        endforeach;
-        mysqli_commit($con); 
-        print_r($_SESSION['add_cart']);
-
-       echo "<script>alert('$user! Your order is successful. Thanks for your purchase with us! ');location.href='../index.php'</script>";
-        
+    if(isset($_POST['submit'])){
+        $name = $_POST['f-name'];
+        $address = $_POST['l-address'];
+        $phone = $_POST['phone'];
+        $email = $_POST['email'];
+        $sql_upUser = "UPDATE users SET user_name = '$name', user_phone = '$phone', user_email = '$email' WHERE user_id = '$userId'";
+        // echo $sql_upUser;
+        $sql_update = "UPDATE orders SET Status = '1' WHERE user_id = '$userId'";
+        // echo $sql_update; exit;
+        $up = $con->query($sql_upUser);
+        $que = $con->query($sql_update);
+        echo "<script>alert('đã thanh toán');location.href='../index.php'</script>";
     }
-    ?>
+    else {
+        echo "<script>alert('some thing wrong');location.href='./checkout.php'</script>";
+    }
+?>

@@ -17,7 +17,7 @@
                     $quantity = $_POST['quantity']; // Số lượng sản phẩm do người dùng nhập
                     
                     $sql = "SELECT * FROM pet_product WHERE pet_prod_id = '$id'";
-                    echo $sql;   
+                    // echo $sql;   
                     $rs = $con->query($sql);
                     foreach($rs as $row){
                         $pet_prod_price = ($row['pet_prod_price']);
@@ -67,6 +67,6 @@
                         }
                 }
             } else{
-                echo "<script>alert('Nhap toi da 1');location.href='../index.php'</script>";
+                echo "<script>alert('Nhập ít nhất 1');location.href='../index.php'</script>";
             }
         }
