@@ -24,9 +24,9 @@ include("../connect.php");
         <nav>
             <div class="nav-links">
                 <ul>
-                    <li><a href="">Manage Pet</a></li>
+                    <li><a href="manage_pet.php">Mange Pet</a></li>
                     <li><a href="adminProductMange.php">Mange product</a></li>
-                    <li><a href="#">Manage customer</a></li>
+                    <li><a href="#">Manage User</a></li>
                     <li><a href="logout.php">Log out</a></li>
                 </ul>
             </div>
@@ -54,6 +54,7 @@ include("../connect.php");
                                     <th>Adress</th>
                                     <th>Email</th>
                                     <th>Detail</th>
+                                    <th>Pet</th>
                                     <th>Delete</th>
                                 </tr>
                             </fliedshet>
@@ -72,6 +73,7 @@ include("../connect.php");
                                     <td>'.$row['user_address'].'</td>
                                     <td>'.$row['user_email'].'</td>
                                     <td><a href="detail_order.php?id='.$row['user_id'].'">view</a></td>
+                                    <td><a href="detail_book.php?id=' .$row['user_id'].'">view</a></td>
                                     <td><a href="delete_user.php?id='.$row['user_id'].'">Delete</td>                        
                                 </tr>';
                                         }

@@ -101,20 +101,31 @@
             </a>
         </div>
     <hr/>
-    <h2 class="mt3 row justify-content-center">ALL PRODUCT</h2>
+    <h2 class="mt3 row justify-content-center">ALL PRODUCT</h2> 
+    <span><a href="./book_pet_date.php">Đăng ký lịch hẹn</a></span> 
+    <span><a href="./view_book_pet.php">Quản lý lịch hẹn</a></span> 
     <div class="container-xs">
         <div class="row justify-content-center">
             <div class="col-2 text-primary" align="center">
                 All Category
                 </br>
                 <div>
-                    <a href="">DOG</a> 
+                    <form action="./index.php" method="GET">
+                        <input type="hidden" name="search" value="dog"/>
+                        <button type="submit"><a>DOG</a</button>
+                    </form>
                 </div>
                 <div>
-                    <a href="">CAT</a>
+                    <form action="./index.php" method="GET">
+                        <input type="hidden" name="search" value="cat"/>
+                        <button type="submit"><a>CAT</a</button>
+                    </form>
                 </div>
                 <div>
-                    <a href="">Other</a>
+                    <form action="./index.php" method="GET">
+                        <input type="hidden" name="search" value="other"/>
+                        <button type="submit"><a>Other</a</button>
+                    </form>
                 </div>
             </div>
             <div class="col-10 ">

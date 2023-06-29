@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./asset/css/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body>
@@ -18,12 +19,13 @@
             <div class="col-sm ">
                 <h1><a href="index.php"><img src="./asset/img/logo.jpg"/></a></h1>
             </div>
-            <div class="col-sm ">
-                <form method="GET" action="search.php" class="">
-                    <input type="text" class="" placeholder="Enter to search for products">
+            <div class="col-sm d-flex align-items-center">
+                <form method="GET" action="./index.php" class="">
+                    <input type="text" class="" placeholder="Enter to search for products" style="width: 300px;" name="search">
+                    <button type="submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>
-            <div class="col-lg 5 d-flex align-items-center justify-content-end ">
+            <div class="col-lg 5 d-flex align-items-center">
                 <div class="d-flex">  
                     <a class="p-2 bg-primary text-light border border-info rounded-left" href="./index.php">Trang chủ</a>
                     <a class="p-2 bg-primary text-light border border-info" href="./user/sign_up.php">Đăng Ký</a>

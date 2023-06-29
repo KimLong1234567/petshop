@@ -1,7 +1,41 @@
 <?php 
-    include "connect.php";
+    include "./connect.php";
+    $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    if($actual_link ==  'http://localhost/petshop/index.php' || $actual_link == 'http://localhost/petshop/'){
+        $value = '';
+    }
+    else{
+        $value = $_GET['search'];
+        if($value == 'other'){
+            $value = 'other';
+        }else{
+            $value = $_GET['search'];
+        }
+    }
 
-    $sql = "SELECT * FROM pet_product";
+    // if($actual_link !=  'http://localhost/petshop/index.php' || $actual_link != 'http://localhost/petshop/'){
+    //     // var_dump($actual_link);
+    //     $value = $_GET['search'];
+    //     if($value == 'other'){
+    //         $value = 'other';
+    //     }else{
+    //         $value = $_GET['search'];
+    //     }
+    // }else{
+    //     $value = '';
+    // }
+
+    switch($value){
+        case 'other':
+            $sql = "SELECT * FROM pet_product WHERE pet_prod_name NOT LIKE '%dog%' AND pet_prod_name NOT LIKE '%cat%'";
+            break;
+        default:
+            $sql = "SELECT * FROM pet_product where pet_prod_name like '%$value%'";
+            break;
+    }
+        // $sql = "SELECT * FROM pet_product where pet_prod_name like '%$value%'";
+    
+
     $rs = $con->query($sql);
         foreach($rs as $row){ 
             $r = $row['pet_prod_id'];

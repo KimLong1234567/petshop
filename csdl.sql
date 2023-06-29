@@ -98,6 +98,32 @@ ADD user_email varchar(255);
 ALTER TABLE users
 ADD UNIQUE (user_email);
 
+ALTER TABLE pet ADD pet_date DATETIME;
+
+ALTER TABLE pet ADD pet_status int(3);
+
 ALTER TABLE `orders` CHANGE `order_date` `order_date` DATETIME NULL DEFAULT NULL;
 
+ALTER TABLE service
+ADD CONSTRAINT pet_id
+FOREIGN KEY (pet_id) REFERENCES pet(pet_id);
+
+ALTER TABLE service
+DROP FOREIGN KEY pet_id;
+
+ALTER TABLE pet
+ADD pet_id varchar(50);
+
+ALTER TABLE service DROP FOREIGN KEY pet_id;
+
+ALTER TABLE `service` CHANGE `service_id` `service_id` INT NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE pet ADD pet_id varchar(50);
+
 INSERT into admin (admin_name, admin_password) VALUES ("admin","admin"); 
+
+INSERT INTO pet_category (pet_category_id, pet_category_name) VALUES 
+('1', 'cat'),
+('2', 'dog'),
+('3','other');
+

@@ -16,7 +16,7 @@
     </style>
 </head>
 <body>
-<h3><button><a href="mange_customer.php">Back to </a></button></h3>
+<h3><button><a href="manage_customer.php">Back to </a></button></h3>
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">

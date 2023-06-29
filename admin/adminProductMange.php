@@ -20,9 +20,9 @@
         <nav>
             <div class="nav-links">
                 <ul>
-                    <li><a href="">Manage Pet</a></li>
+                    <li><a href="manage_pet.php">Manage Pet</a></li>
                     <li><a href="adminProductMange.php">Manage Products</a></li>
-                    <li><a href="mange_customer.php">Manage Users</a></li>
+                    <li><a href="manage_customer.php">Manage Users</a></li>
                     <li><a href="logout.php">Log out</a></li>
                 </ul>
             </div>
