@@ -41,8 +41,8 @@
                     <thead>
                         <tr>
                             <th class="table-success" scope="col">STT</th>
+                            <th class="table-success" scope="col">Product ID</th>
                             <th class="table-success" scope="col">Name</th>
-                            <th class="table-success" scope="col">Code</th>
                             <th class="table-success" scope="col">Detail</th>
                             <th class="table-success" scope="col">Price</th>
                             <th class="table-success" scope="col">Origin</th>
@@ -56,8 +56,8 @@
                             while($row = mysqli_fetch_assoc($query_show_prd)){ ?>
                                     <tr>
                                         <td scope="row"><?php echo $i++; ?></td>
-                                        <td><?php echo $row['pet_prod_name'] ?></td>
                                         <td><?php echo $row['pet_prod_id'] ?></td>
+                                        <td><?php echo $row['pet_prod_name'] ?></td>
                                         <td><?php echo $row['pet_prod_detail']?></td>
                                         <td><?php echo $row['pet_prod_price']?></td>
                                         <td><?php echo $row['pet_prod_origin'] ?></td>

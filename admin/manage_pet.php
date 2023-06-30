@@ -32,7 +32,7 @@
     </section>
         <h1 class="h1">PET MANAGEMENT</h1>
             <div class="">
-                <h3 class="menu">List of pet</h3>
+                <h3 class="menu"><center> List of pet</center></h3>
             </div>
         <fieldset>
         <div class="container">
@@ -42,14 +42,14 @@
                             <th class="table-success" scope="col">STT</th>
                             <th class="table-success" scope="col">Name User</th>
                             <th class="table-success" scope="col">Name Pet</th>
-                            <th class="table-success" scope="col">Loài</th>
-                            <th class="table-success" scope="col">Ngày Đặt Lịch</th>
+                            <th class="table-success" scope="col">Type</th>
+                            <th class="table-success" scope="col">Date_Book</th>
                             <th class="table-success" scope="col">Image</th>
-                            <th class="table-success" scope="col">Ngày Khám</th>
-                            <th class="table-success" scope="col">Trạng thái</th>
+                            <th class="table-success" scope="col">Date_Process</th>
+                            <th class="table-success" scope="col">Status</th>
                             <th class="table-success" scope="col">Dịch vụ</th>
-                            <th class="table-success" scope="col">Chi Phí</th>
-                            <th class="table-success" scope="col">Update</th>
+                            <th class="table-success" scope="col">Fee</th>
+                            <th class="table-success" scope="col">Process</th>
                             
                         </tr>
                     <?php
@@ -59,7 +59,7 @@
                                         <td scope="row"><?php echo $i++; ?></td>
                                         <td><?php echo $row['user_name'] ?></td>
                                         <td><?php echo $row['pet_name'] ?></td>
-                                        <td><?php echo $row['pet_category_id']?></td>
+                                        <td><?php echo $row['pet_category_name']?></td>
                                         <td><?php echo $row['pet_date']?></td>
                                         <td><img src="../asset/img/<?php echo $row['pet_img']?>"> </td>
                                         <td>
@@ -75,10 +75,10 @@
                                         <td>
                                             <?php 
                                                 if($row['pet_status'] == 1){
-                                                    echo "Đã khám";
+                                                    echo "Processed";
                                                 }
                                                 else{
-                                                    echo "Chưa khám";
+                                                    echo "Process";
                                                 }
                                             ?>
                                         </td>
@@ -103,7 +103,7 @@
                                             ?>
                                         </td>
                                         <td><a href="update_pet.php ?id=<?php echo $row['pet_id'] ?>"><button
-                                                type="button" class="btn btn-sm btn-primary btn-create">Khám</button></a></td>
+                                                type="button" class="btn btn-sm btn-primary btn-create">Process</button></a></td>
                                         <!-- <td><a href="delete_pet.php ?id=<?php echo $row['pet_id'] ?>"><button
                                                 type="button" class="btn btn-sm btn-danger btn-create">Delete</button></a></td> -->
                                     </tr>

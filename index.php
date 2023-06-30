@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="./asset/css/index.css">
 </head>
 <body>
-<div class="container-fluid border">
+<div class="container-lg border">
         <div
             id="carousel-example-generic"
             class="carousel slide"
