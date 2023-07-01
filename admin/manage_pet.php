@@ -22,10 +22,10 @@
         <nav>
             <div class="nav-links">
                 <ul>
-                    <li><a href="manage_pet.php">Manage Pet</a></li>
-                    <li><a href="adminProductMange.php">Manage Products</a></li>
-                    <li><a href="manage_customer.php">Manage Users</a></li>
-                    <li><a href="logout.php">Log out</a></li>
+                    <li><a class="text-danger" href="manage_pet.php">Manage Pet</a></li>
+                    <li><a class="text-danger" href="adminProductMange.php">Manage Products</a></li>
+                    <li><a class="text-danger" href="manage_customer.php">Manage Users</a></li>
+                    <li><a class="text-danger" href="logout.php">Log out</a></li>
                 </ul>
             </div>
         </nav>
@@ -47,7 +47,7 @@
                             <th class="table-success" scope="col">Image</th>
                             <th class="table-success" scope="col">Date_Process</th>
                             <th class="table-success" scope="col">Status</th>
-                            <th class="table-success" scope="col">Dịch vụ</th>
+                            <th class="table-success" scope="col">Service</th>
                             <th class="table-success" scope="col">Fee</th>
                             <th class="table-success" scope="col">Process</th>
                             

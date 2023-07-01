@@ -40,7 +40,7 @@
     <body>
     <div class="main">
         <form action="sign_up.php" method="POST" class="form" id="form-1">
-            <h3 class="heading">Thành viên đăng ký</h3>
+            <h3 class="heading">User Sign Up</h3>
             <div class="spacer"></div>
 
             <div class="form-group">

@@ -16,12 +16,12 @@
     </style>
 </head>
 <body>
-<h3><button><a href="manage_customer.php">Back to </a></button></h3>
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default panel-table">
                     <div class="panel-body">
+                        <h3><button><a href="manage_customer.php">Back to </a></button></h3>
                         <table class="table table-striped table-bordered table-list">
                             <center><?php 
                                 require "../connect.php";
@@ -39,10 +39,10 @@
                                     <th>Product name</th>
                                     <th>Price</th>
                                     <th>Image</th>
-                                    <th>order_date</th>
-                                    <th>order_numberOfItem</th>
-                                    <th>order_total</th>
-                                    <th>Trạng Thái</th>
+                                    <th>Order Date</th>
+                                    <th>Order Number of Item</th>
+                                    <th>Order Total</th>
+                                    <th>Status</th>
                                 </tr>
                             </fliedshet>
                             <tbody>

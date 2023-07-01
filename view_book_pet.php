@@ -24,12 +24,12 @@
     <title>User | Book list</title>
 </head>
 <body>
-<h3><button><a href="./index.php">Back to main page </a></button></h3>
+<h3 style="padding-top: 20px;"><button><a href="./index.php">Back to main page </a></button></h3>
 <section class="header">
     </section>
-        <h1 class="h1">BOOK PET MANAGEMENT</h1>
+        <h1 class="h1" >BOOK PET MANAGEMENT</h1>
             <div class="">
-                <h3 class="menu">List of Book</h3>
+                <h3 class="menu"> <center>List of Book</center></h3>
             </div>
         <fieldset>
         <div class="container">
@@ -39,12 +39,13 @@
                             <th class="table-success" scope="col">STT</th>
                             <th class="table-success" scope="col">Name Pet</th>
                             <th class="table-success" scope="col">Description</th>
-                            <th class="table-success" scope="col">Loài</th>
+                            <th class="table-success" scope="col">Type</th>
                             <th class="table-success" scope="col">Image</th>
-                            <th class="table-success" scope="col">Ngày đặt lịch</th>
-                            <th class="table-success" scope="col">Trạng thái</th>
-                            <th class="table-success" scope="col">Chi tiết phục vụ</th>
-                            <th class="table-success" scope="col">Chi Phí</th>
+                            <th class="table-success" scope="col">Date Book</th>
+                            <th class="table-success" scope="col">Date Service</th>
+                            <th class="table-success" scope="col">Satus</th>
+                            <th class="table-success" scope="col">Detail Service</th>
+                            <th class="table-success" scope="col">Fee</th>
                         </tr>
                     <?php
                         $i = 1;
@@ -58,18 +59,28 @@
                                         <td><?php echo $row['pet_date']?></td>
                                         <td>
                                             <?php 
-                                                if($row['pet_status'] == 1){
-                                                    echo "Đã khám";
+                                                if($row['pet_service_date'] == NULL){
+                                                    echo "In Process";
                                                 }
                                                 else{
-                                                    echo "Chưa khám";
+                                                    echo $row['pet_service_date'];
+                                                }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php 
+                                                if($row['pet_status'] == 1){
+                                                    echo "Done";
+                                                }
+                                                else{
+                                                    echo "In Process";
                                                 }
                                             ?>
                                         </td>
                                         <td>
                                             <?php 
                                                 if($row['pet_service_detail'] == NULL){
-                                                    echo "Đang chờ xử lý";
+                                                    echo "In Process";
                                                 }
                                                 else{
                                                     echo $row['pet_service_detail'];
@@ -79,7 +90,7 @@
                                         <td>
                                             <?php 
                                                 if($row['pet_service_fee'] == NULL){
-                                                    echo "Đang chờ xử lý";
+                                                    echo "Not yet";
                                                 }
                                                 else{
                                                     echo $row['pet_service_fee'];

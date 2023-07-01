@@ -46,7 +46,7 @@
                     
                     <th scope="col">Subtotal</th>
                     <th scope="col">Total</th>
-                    <th></th>
+                    <th scope="col">Delete</th>
                 </tr>
             
                 <tr>
@@ -104,7 +104,7 @@
             </table>
         </div>
         <br>
-        <a href="./user/checkout.php"><h3 style="text-align: right; color:red">PAYMENTS</h3></a>
+        <button type="button" class="btn btn-outline-dark"><a href="./user/checkout.php"><h3 style="color:red">PAYMENTS</h3></a></button>
     </div>
 
 </body>

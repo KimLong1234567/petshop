@@ -41,10 +41,11 @@
             $r = $row['pet_prod_id'];
             ?>
 <html>
-<div class="col-3 border border-info">
+
+<div class="col-3 border border-info" style="margin: 0 30px 30px 0;">
     <div class="">
-        <form action="./user/add_cart.php?&id=<?php echo $r?>" method="POST" class="">
-            <div class="d-flex justify-content-center">
+        <form action="./user/add_cart.php?&id=<?php echo $r?>" method="POST">
+            <div class="d-flex justify-content-center" style="padding: 10px;">
                 <img src="./asset/img/<?php echo $row['pet_prod_image']?>" alt="bug">
             </div> 
             <h4 class="text-danger d-flex justify-content-center"> <?php echo $row['pet_prod_name'] ?><a href="detail_product.php"></a></h4>
@@ -57,7 +58,9 @@
             <div class="text-danger d-flex justify-content-end">
                 <span class=""><?php echo $row['pet_prod_origin'] ?></span>
             </div>
-            <button type="submit" class="btn btn-info" name="add">ADD TO CART</button>
+            <div style="padding-bottom: 20px;">
+                <button type="submit" class="btn btn-info" name="add" >ADD TO CART</button>
+            </div>
         </form>
     </div>
 </div>

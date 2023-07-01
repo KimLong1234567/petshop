@@ -13,7 +13,13 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="./asset/css/index.css">
+    <!-- <link rel="stylesheet" href="./asset/css/index.css"> -->
+    <style>
+        .carousel-inner img {
+    width: 100%;
+    height: 500px;
+    } 
+    </style>
 </head>
 <body>
 <div class="container-lg border">
@@ -51,28 +57,28 @@
                 <div class="carousel-item active">
                     <img class="img-fluid"
                         alt="First slide"
-                        src="./asset/img/715682.png"
+                        src="./asset/img/banner.webp"
                     />
                 </div>
                 <div class="carousel-item">
                     <img
                         class="img-fluid"
                         alt="Second slide"
-                        src="./asset/img/644423.jpg"
+                        src="./asset/img/banner2.jpg"
                     />
                 </div>
                 <div class="carousel-item">
                     <img
                         class="img-fluid"
                         alt="Third slide"
-                        src="./asset/img/721601.png"
+                        src="./asset/img/banner3.webp"
                     />
                 </div>
                 <div class="carousel-item">
                     <img
                         class="img-fluid"
                         alt="Four slide"
-                        src="./asset/img/901699.jpg"
+                        src="./asset/img/banner4.jpg"
                     />
                 </div>
             </div>
@@ -101,30 +107,32 @@
             </a>
         </div>
     <hr/>
-    <h2 class="mt3 row justify-content-center">ALL PRODUCT</h2> 
-    <span><a href="./book_pet_date.php">Đăng ký lịch hẹn</a></span> 
-    <span><a href="./view_book_pet.php">Quản lý lịch hẹn</a></span> 
+    <h2 class="mt3 row justify-content-center" style="color: red;">ALL PRODUCT</h2> 
+    <div class="" style="padding-bottom: 30px;">
+        <span style="padding-right: 30px;"><button type="button" class="btn btn-outline-success"><a href="./book_pet_date.php">Book Pet</a></button> </span> 
+        <span><button type="button" class="btn btn-outline-success"><a href="./view_book_pet.php">Pet Manage</a></button></span>
+    </div> 
     <div class="container-xs">
         <div class="row justify-content-center">
-            <div class="col-2 text-primary" align="center">
-                All Category
+            <div class="col-2 text-primary position-relative " align="center">
+                <p style="color: red;">All Category</p>
                 </br>
-                <div>
+                <div style="padding-bottom: 20px">
                     <form action="./index.php" method="GET">
                         <input type="hidden" name="search" value="dog"/>
-                        <button type="submit"><a>DOG</a</button>
+                        <button type="submit" class="btn btn-outline-primary"><a>DOG</a</button>
                     </form>
                 </div>
-                <div>
+                <div style="padding-bottom: 20px">
                     <form action="./index.php" method="GET">
                         <input type="hidden" name="search" value="cat"/>
-                        <button type="submit"><a>CAT</a</button>
+                        <button type="submit" class="btn btn-outline-primary"><a>CAT</a</button>
                     </form>
                 </div>
-                <div>
+                <div  style="padding-bottom: 20px">
                     <form action="./index.php" method="GET">
                         <input type="hidden" name="search" value="other"/>
-                        <button type="submit"><a>Other</a</button>
+                        <button type="submit" class="btn btn-outline-primary"><a>Other</a</button>
                     </form>
                 </div>
             </div>

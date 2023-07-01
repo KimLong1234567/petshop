@@ -35,8 +35,8 @@ require_once "../connect.php";
     
     </head>
     <body>
-        <form action="sign_in.php" method = "POST" class="form" id="form-1">
-            <h3 class="heading">Thành viên đăng nhập</h3>
+        <form action="sign_in.php" method = "POST" class="form" style="margin:auto" id="form-1">
+            <h3 class="heading">User Sign In</h3>
             <div class="spacer"></div>
             <div class="form-group">
                 <label for="fullname" class="form-label">User Name</label>

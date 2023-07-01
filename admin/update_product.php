@@ -33,7 +33,8 @@
         pet_prod_origin = '$pet_prod_origin', 
         pet_prod_image = '$pet_prod_img', 
         pet_prod_price = '$pet_prod_price'
-        WHERE pet_prod_id = $pet_prod_id ";
+        WHERE pet_prod_id = '$pet_prod_id' ";
+        // echo $sql_edit; exit;
 
         //thuc thi cau lenh
         mysqli_query($con, $sql_edit);

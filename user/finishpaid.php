@@ -13,9 +13,10 @@ require_once "../connect.php";
         // echo $sql_update; exit;
         $up = $con->query($sql_upUser);
         $que = $con->query($sql_update);
-        echo "<script>alert('đã thanh toán');location.href='../index.php'</script>";
+        echo "<script>location.href='../printBill.php'</script>";
     }
     else {
         echo "<script>alert('some thing wrong');location.href='./checkout.php'</script>";
     }
 ?>
+

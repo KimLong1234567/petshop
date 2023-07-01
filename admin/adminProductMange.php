@@ -20,20 +20,20 @@
         <nav>
             <div class="nav-links">
                 <ul>
-                    <li><a href="manage_pet.php">Manage Pet</a></li>
-                    <li><a href="adminProductMange.php">Manage Products</a></li>
-                    <li><a href="manage_customer.php">Manage Users</a></li>
-                    <li><a href="logout.php">Log out</a></li>
+                    <li><a class="text-danger" href="manage_pet.php">Manage Pet</a></li>
+                    <li><a class="text-danger" href="adminProductMange.php">Manage Products</a></li>
+                    <li><a class="text-danger" href="manage_customer.php">Manage Users</a></li>
+                    <li><a class="text-danger" href="logout.php">Log out</a></li>
                 </ul>
             </div>
         </nav>
     </section>
         <h1 class="h1">PRODUCT MANAGEMENT</h1>
-            <div class="">
-                <h3 class="menu">List of product</h3>
+            <div style="padding-left: 20px;">
+                <h3 class="menu"><center>List of product</center></h3>
             </div>
-            <div class="col col-xs-5 text-right">
-                <a href="addProducts.php"><button type="button" class="add">Add new product</button></a>
+            <div style="padding-left: 110px; margin-bottom: 30px;">
+                <a href="addProducts.php"><button type="button" class="btn btn-outline-info">Add new product</button></a>
             </div>
         <fieldset>
         <div class="container">

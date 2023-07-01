@@ -24,10 +24,10 @@ include("../connect.php");
         <nav>
             <div class="nav-links">
                 <ul>
-                    <li><a href="manage_pet.php">Mange Pet</a></li>
-                    <li><a href="adminProductMange.php">Mange product</a></li>
-                    <li><a href="#">Manage User</a></li>
-                    <li><a href="logout.php">Log out</a></li>
+                    <li><a class="text-danger" href="manage_pet.php">Mange Pet</a></li>
+                    <li><a class="text-danger" href="adminProductMange.php">Mange product</a></li>
+                    <li><a class="text-danger" href="#">Manage User</a></li>
+                    <li><a class="text-danger" href="logout.php">Log out</a></li>
                 </ul>
             </div>
         </nav>
