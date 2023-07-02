@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-<div class="container-lg border">
+<div class="container-sm-fluid" style="margin-left: 20px;">
         <div
             id="carousel-example-generic"
             class="carousel slide"
@@ -107,32 +107,32 @@
             </a>
         </div>
     <hr/>
-    <h2 class="mt3 row justify-content-center" style="color: red;">ALL PRODUCT</h2> 
+    <h2 class="mt3 row justify-content-center" style="color: red;">Tất cả sản phẩm</h2> 
     <div class="" style="padding-bottom: 30px;">
-        <span style="padding-right: 30px;"><button type="button" class="btn btn-outline-success"><a href="./book_pet_date.php">Book Pet</a></button> </span> 
-        <span><button type="button" class="btn btn-outline-success"><a href="./view_book_pet.php">Pet Manage</a></button></span>
+        <span style="padding-right: 30px;"><button type="button" class="btn btn-outline-success"><a href="./book_pet_date.php">Đặt lịch hẹn</a></button> </span> 
+        <span><button type="button" class="btn btn-outline-success"><a href="./view_book_pet.php">Quản lý lịch hẹn</a></button></span>
     </div> 
     <div class="container-xs">
         <div class="row justify-content-center">
             <div class="col-2 text-primary position-relative " align="center">
-                <p style="color: red;">All Category</p>
+                <p style="color: red;">Tìm Kiếm Theo</p>
                 </br>
                 <div style="padding-bottom: 20px">
                     <form action="./index.php" method="GET">
                         <input type="hidden" name="search" value="dog"/>
-                        <button type="submit" class="btn btn-outline-primary"><a>DOG</a</button>
+                        <button type="submit" class="btn btn-outline-primary"><a>Chó</a</button>
                     </form>
                 </div>
                 <div style="padding-bottom: 20px">
                     <form action="./index.php" method="GET">
                         <input type="hidden" name="search" value="cat"/>
-                        <button type="submit" class="btn btn-outline-primary"><a>CAT</a</button>
+                        <button type="submit" class="btn btn-outline-primary"><a>Mèo</a</button>
                     </form>
                 </div>
                 <div  style="padding-bottom: 20px">
                     <form action="./index.php" method="GET">
                         <input type="hidden" name="search" value="other"/>
-                        <button type="submit" class="btn btn-outline-primary"><a>Other</a</button>
+                        <button type="submit" class="btn btn-outline-primary"><a>Khác</a</button>
                     </form>
                 </div>
             </div>

@@ -59,7 +59,7 @@
                 <span class="form-message"></span>
             </div>
             <div class="form-group">
-                <label for="phone" class="form-label">Phone:</label>
+                <label for="phone" class="form-label">Số điện thoại:</label>
                 <input id = "phone" type="number" placeholder="Nhập số điện thoại" name="phone" class="form-control">
                 <span class="form-message"></span>
             </div>
@@ -69,7 +69,7 @@
                 <span class="form-message"></span>
             </div>
             <div class="form-group">
-                <label for="address" class="form-label">Address:</label>
+                <label for="address" class="form-label">Địa chỉ:</label>
                 <input id="address" type="text" placeholder="Nhập địa chỉ" name="address" class="form-control">
                 <span class="form-message"></span>
             </div>

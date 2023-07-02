@@ -45,7 +45,7 @@
                                             }
                                                 if($i == '' ){
                                                     $sql_insert= "INSERT INTO orders (order_id, order_date, order_total, order_numberOfItem, user_id, status, pet_prod_id) 
-                                                    VALUES ('$random_char',CURRENT_TIMESTAMP(),'$total','$quantity','$userId','','$id')";
+                                                    VALUES ('$random_char',CURRENT_TIMESTAMP(),'$total','$quantity','$userId','0','$id')";
                                                     $insert = $con->query($sql_insert);
                                                     echo "<script>alert('This product added success!  with $quantity ');location.href='../view_cart.php'</script>";
                                                 }

@@ -37,13 +37,13 @@
                             <fliedshet>
                                 <tr>
                                     <th class="table-success" scope="col">STT</th>
-                                    <th class="table-success" scope="col">Name Pet</th>
-                                    <th class="table-success" scope="col">Description</th>
-                                    <th class="table-success" scope="col">Type</th>
-                                    <th class="table-success" scope="col">Image</th>
-                                    <th class="table-success" scope="col">Date Book</th>
-                                    <th class="table-success" scope="col">Status</th>
-                                    <th class="table-success" scope="col">Fee</th>
+                                    <th class="table-success" scope="col">Tên thú cưng</th>
+                                    <th class="table-success" scope="col">Miêu tả</th>
+                                    <th class="table-success" scope="col">Loài </th>
+                                    <th class="table-success" scope="col">Hình ảnh</th>
+                                    <th class="table-success" scope="col">Ngày đặt lịch</th>
+                                    <th class="table-success" scope="col">Trạng thái</th>
+                                    <th class="table-success" scope="col">Chi phí</th>
                                 </tr>
                             </fliedshet>
                             <tbody>

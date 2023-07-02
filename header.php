@@ -26,13 +26,13 @@
             </div>
             <div class="col-lg-5 d-flex align-items-center justify-content-end">
                 <div class="d-flex">  
-                    <a class="p-2 bg-primary text-light border border-info rounded-left" href="./index.php">INDEX</a>
-                    <a class="p-2 bg-primary text-light border border-info" href="./user/sign_up.php">Sign UP</a>
-                    <a class="p-2 bg-primary text-light border border-info" href="./user/sign_in.php">Sign IN</a>
+                    <a class="p-2 bg-primary text-light border border-info rounded-left" href="./index.php">Trang chủ</a>
+                    <a class="p-2 bg-primary text-light border border-info" href="./user/sign_up.php">Đăng ký</a>
+                    <a class="p-2 bg-primary text-light border border-info" href="./user/sign_in.php">Đăng nhập</a>
                     <a class="p-2 bg-primary text-light border border-info" href="./admin/login.php">ADMIN</a>
-                    <a class="p-2 bg-primary text-light border border-info" href="./view_cart.php">Cart</a>
-                    <a class="p-2 bg-primary text-light border border-info" href="">Contact</a>
-                    <a class="p-2 bg-primary text-light border border-info rounded-right" href="./user/logout.php">Log out</a>
+                    <a class="p-2 bg-primary text-light border border-info" href="./view_cart.php">Giỏ hàng</a>
+                    <a class="p-2 bg-primary text-light border border-info" href="">Liên Hệ</a>
+                    <a class="p-2 bg-primary text-light border border-info rounded-right" href="./user/logout.php">Đăng xuất</a>
                 </div>
             </div>
         </div>

@@ -40,16 +40,16 @@
                     <thead>
                         <tr>
                             <th class="table-success" scope="col">STT</th>
-                            <th class="table-success" scope="col">Name User</th>
-                            <th class="table-success" scope="col">Name Pet</th>
-                            <th class="table-success" scope="col">Type</th>
-                            <th class="table-success" scope="col">Date_Book</th>
-                            <th class="table-success" scope="col">Image</th>
-                            <th class="table-success" scope="col">Date_Process</th>
-                            <th class="table-success" scope="col">Status</th>
-                            <th class="table-success" scope="col">Service</th>
-                            <th class="table-success" scope="col">Fee</th>
-                            <th class="table-success" scope="col">Process</th>
+                            <th class="table-success" scope="col">Tên người dùng</th>
+                            <th class="table-success" scope="col">Tên thú cưng</th>
+                            <th class="table-success" scope="col">Loài</th>
+                            <th class="table-success" scope="col">Ngày đặt lịch</th>
+                            <th class="table-success" scope="col">Hình ảnh thú cưng</th>
+                            <th class="table-success" scope="col">Ngày chăm sóc</th>
+                            <th class="table-success" scope="col">Trạng Thái</th>
+                            <th class="table-success" scope="col">Dịch vụ</th>
+                            <th class="table-success" scope="col">Chi phí</th>
+                            <th class="table-success" scope="col">Xử lý</th>
                             
                         </tr>
                     <?php
@@ -75,10 +75,10 @@
                                         <td>
                                             <?php 
                                                 if($row['pet_status'] == 1){
-                                                    echo "Processed";
+                                                    echo "Đã xử lý";
                                                 }
                                                 else{
-                                                    echo "Process";
+                                                    echo "Đang xử lý";
                                                 }
                                             ?>
                                         </td>
@@ -95,7 +95,7 @@
                                         <td>
                                             <?php 
                                                 if($row['pet_service_fee'] == NULL){
-                                                    echo "Đang chờ xử lý";
+                                                    echo "0";
                                                 }
                                                 else{
                                                     echo $row['pet_service_fee'];
@@ -103,7 +103,7 @@
                                             ?>
                                         </td>
                                         <td><a href="update_pet.php ?id=<?php echo $row['pet_id'] ?>"><button
-                                                type="button" class="btn btn-sm btn-primary btn-create">Process</button></a></td>
+                                                type="button" class="btn btn-sm btn-primary btn-create">Xử lý</button></a></td>
                                         <!-- <td><a href="delete_pet.php ?id=<?php echo $row['pet_id'] ?>"><button
                                                 type="button" class="btn btn-sm btn-danger btn-create">Delete</button></a></td> -->
                                     </tr>

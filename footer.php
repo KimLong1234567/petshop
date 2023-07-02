@@ -20,16 +20,16 @@
 <div style="border-style: 10px solid black; ;">
     <div class="row">
         <div class="col-sm-6">
-            <p>© Copyright belong to Kim Long.</p>
+            <p>© Bản quyền thuộc về Kim Long.</p>
         </div>
         <div class="col-sm-6">
             <div>
                 <ul class="d-flex justify-content-between">
-                    <ul><a href="index.php" style="color: red;">INDEX</a></ul>
-                    <ul><a href="" style="color: red;">Service</a></ul>
-                    <ul><a href="" style="color: red;">About us</a></ul>
-                    <ul><a href="" style="color: red;">FAQ</a></ul>
-                    <ul><a href="" style="color: red;">Contact</a></ul>
+                    <ul><a href="index.php" style="color: red;">Trang chủ</a></ul>
+              
+                    <ul><a href="" style="color: red;">Về chúng tôi</a></ul>
+                
+                    <ul><a href="" style="color: red;">Liên hệ</a></ul>
                 </ul>
             </div>
         </div>

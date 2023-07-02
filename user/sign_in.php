@@ -30,12 +30,10 @@ require_once "../connect.php";
 
 <html>
     <head>
-        
         <link rel="stylesheet " href="../asset/css/user_login.css">
-    
     </head>
     <body>
-        <form action="sign_in.php" method = "POST" class="form" style="margin:auto" id="form-1">
+        <form action="sign_in.php" method = "POST" class="form" style="margin-top: 30px; margin-left: auto; margin-right: auto;" id="form-1">
             <h3 class="heading">User Sign In</h3>
             <div class="spacer"></div>
             <div class="form-group">

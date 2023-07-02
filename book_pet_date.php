@@ -48,7 +48,7 @@
                 // echo $pet_category_id;
                 // var_dump($_FILES["pet_img"]['name']);
                 
-                if(isset($pet_name) && isset($pet_description) && isset($pet_img)){
+                if(isset($pet_name) && isset($pet_description) && isset($pet_img) && isset($username) && isset($address) && isset($phone) && isset($email)){
                     $sqlUpUser = "UPDATE users SET user_name = '$username', user_phone = '$phone', user_email = '$email' WHERE user_id = '$userId'";
                     $sqlInerst = "INSERT INTO pet (pet_id, pet_name, pet_description, pet_category_id, pet_img, user_id, pet_date, pet_status) 
                     VALUES ('$random_char', '$pet_name', '$pet_description', '$pet_category_id', '$pet_img','$userId', CURRENT_TIMESTAMP(),'')";
@@ -79,26 +79,26 @@
             <h1>Đặt Lịch Hẹn Chăm Sóc Thú Cưng</h1>
                 <form action="book_pet_date.php" method="POST" enctype="multipart/form-data">
                     <fieldset>
-                        <legend>Personal information :</legend>
-                        <label>Your full name* : </label>
+                        <legend>Thông tin cá nhân :</legend>
+                        <label>Tên đầy đủ* : </label>
                         <input type="text" name="f-name" value="<?php echo $r['user_name']; ?>">
 
-                        <label>Your address *: </label>
+                        <label>Địa chỉ *: </label>
                         <input type="text" name="l-address" value="<?php echo $r['user_address']; ?>">
 
-                        <label>Your phone* : </label>
+                        <label>Số điện thoại* : </label>
                         <input type="text" name="phone" value="<?php echo $r['user_phone'];?>">
 
-                        <label>Your email* : </label>
+                        <label>Email* : </label>
                         <input type="text" name="email" value="<?php echo $r['user_email'];?>">
 
-                        <label>Your pet name*: </label>
+                        <label>Tên thú cưng*: </label>
                         <input type="text" name="pet_name">
 
-                        <label>Your pet description (vấn đề gặp phải)* : </label>
+                        <label>Vấn đề gặp phải* : </label>
                         <input type="text" name="pet_description" >
 
-                        <label>Your pet category* : </label>
+                        <label>Loài thú cưng* : </label>
                             
                         <select name="category">
                             <?php
@@ -112,7 +112,7 @@
                             ?>
                         </select>
 
-                        <label>Your Pet Image* : </label>
+                        <label>HÌnh ảnh thú cưng* : </label>
                         <input type="file" name="pet_img" accept="image/*">
                     
                         <input type="submit" name="submit" value="Submit your information form">

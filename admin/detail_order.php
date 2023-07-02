@@ -36,13 +36,13 @@
                             ?></center>
                             <fliedshet>
                                 <tr>
-                                    <th>Product name</th>
-                                    <th>Price</th>
-                                    <th>Image</th>
-                                    <th>Order Date</th>
-                                    <th>Order Number of Item</th>
-                                    <th>Order Total</th>
-                                    <th>Status</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Giá</th>
+                                    <th>Hình ảnh</th>
+                                    <th>Ngày đặt hàng</th>
+                                    <th>Số lượng</th>
+                                    <th>Tổng cộng</th>
+                                    <th>Tình trạng</th>
                                 </tr>
                             </fliedshet>
                             <tbody>
@@ -76,7 +76,7 @@
                                 endforeach  ?>
                             </tbody>
                         </table>
-                        Total:
+                        Tổng:
                         <?php
                             function total_price($que){
                                 $total = 0;

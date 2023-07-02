@@ -35,18 +35,18 @@
 
     <h1><center> CART</center></h1>
     <!-- cart_iTem -->
-    <div class="container border">
+    <div class="container border" style="margin-bottom: 30px;">
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th scope="col">STT</th>
-                    <th scope="col">Products Image</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Quantity</th>
+                    <th scope="col">Hình ảnh sản phẩm</th>
+                    <th scope="col">Tên sản phẩm</th>
+                    <th scope="col">Số lượng</th>
                     
-                    <th scope="col">Subtotal</th>
-                    <th scope="col">Total</th>
-                    <th scope="col">Delete</th>
+                    <th scope="col">Số lượng sản phẩm</th>
+                    <th scope="col">Tổng cộng</th>
+                    <th scope="col">Xoá sản phẩm</th>
                 </tr>
             
                 <tr>
@@ -73,6 +73,7 @@
                     <td>
                         <form action="./user/delete_item.php?id=<?php echo $id?>" method="POST" class="">
                             <button type="submit" class="btn btn-info" name="delete">Remove</button>
+                            <!-- sửa thành icon -->
                         </form>
                     </td>
                 </tr>
@@ -86,7 +87,7 @@
         <div class="container">
             <table class="d-flex justify-content-end" >
                 <tr>
-                    <td>Total:</td>
+                    <td>Tổng:</td>
                     <td>
                         <div >
                         <?php
@@ -104,7 +105,7 @@
             </table>
         </div>
         <br>
-        <button type="button" class="btn btn-outline-dark"><a href="./user/checkout.php"><h3 style="color:red">PAYMENTS</h3></a></button>
+        <button type="button" class="btn btn-outline-dark"><a href="./user/checkout.php"><h3 style="color:red">Tính Tiền</h3></a></button>
     </div>
 
 </body>

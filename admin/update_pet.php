@@ -35,10 +35,37 @@
 ?>
 
 <html>
-    <p>Chi tiết chăm sóc</p>
-    <table>
-    <form method="POST" action="update_pet.php" enctype="multipart/form-data">
-        <tr>
+<head>
+    <link rel="stylesheet " href="../asset/css/user_login.css">
+</head>
+<body> 
+<div class="main">
+    <form method="POST" action="update_pet.php" enctype="multipart/form-data" class="form" id="form-1" style="margin: 30px auto 30px auto;">
+        <h3 class="heading">Chi tiết chăm sóc</h3>
+        <div class="spacer"></div>
+
+
+        <div class="form-group">
+            <label for="pet_id" class="form-label">Mã thú cưng</label>
+            <input id="pet_id" type="text" name="pet_id" class="form-control" value="<?php echo $r['pet_id']; ?>" readonly="true">
+            <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="pet_name" class="form-label">Chi tiết chăm sóc</label>
+            <textarea id="pet_name" type="text" placeholder="Nhập chi tiết" name="pet_service_detail" class="form-control"><?php echo $r['pet_service_detail']; ?></textarea>
+            <span class="form-message"></span>
+        </div>
+        
+        <div class="form-group">
+            <label for="pet_fee" class="form-label">Thành tiền</label>
+            <input id="pet fee" type="number" placeholder="Nhập giá tiền" name="pet_service_fee" class="form-control" value="<?php echo $r['pet_service_fee']; ?>">
+            <span class="form-message"></span>
+        </div>
+        <button class="form-submit" name="submit">Hoàn thành chăm sóc</button>
+
+
+        <!-- <tr>
             <td>Pet id</td>
             <td><input type="text" name="pet_id" value="<?php echo $r['pet_id']; ?>" readonly="true"></td>
         </tr>
@@ -53,7 +80,9 @@
         </tr>
         <tr>
             <td><input type="submit" name="submit" value="UPDATE"></td>
-        </tr>
+        </tr> -->
     </form>
-    </table>
+    
+</div>
+</body>
 </html>

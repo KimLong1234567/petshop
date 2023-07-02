@@ -15,7 +15,6 @@
         require "../connect.php";
         $userId = $_COOKIE['userId'];
         $sql = "SELECT * FROM users WHERE user_id = '$userId'";
-
         $sql_cart =  "SELECT o.order_total, o.order_numberOfItem, p.pet_prod_name, p.pet_prod_origin, p.pet_prod_image, 
         p.pet_prod_price, p.pet_prod_quantity, p.pet_prod_id
         FROM orders AS o, pet_product AS p WHERE o.pet_prod_id = p.pet_prod_id AND o.user_id = '$userId'";

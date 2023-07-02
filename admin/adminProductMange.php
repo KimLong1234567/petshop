@@ -20,36 +20,36 @@
         <nav>
             <div class="nav-links">
                 <ul>
-                    <li><a class="text-danger" href="manage_pet.php">Manage Pet</a></li>
-                    <li><a class="text-danger" href="adminProductMange.php">Manage Products</a></li>
-                    <li><a class="text-danger" href="manage_customer.php">Manage Users</a></li>
-                    <li><a class="text-danger" href="logout.php">Log out</a></li>
+                    <li><a class="text-danger" href="manage_pet.php">Quản lý thú cưng</a></li>
+                    <li><a class="text-danger" href="adminProductMange.php">Quản lý sản phẩm</a></li>
+                    <li><a class="text-danger" href="manage_customer.php">Quản lý người dùng</a></li>
+                    <li><a class="text-danger" href="logout.php">Đăng xuất</a></li>
                 </ul>
             </div>
         </nav>
     </section>
-        <h1 class="h1">PRODUCT MANAGEMENT</h1>
+        <h1 class="h1">QUẢN LÝ SẢN PHẨM</h1>
             <div style="padding-left: 20px;">
-                <h3 class="menu"><center>List of product</center></h3>
+                <h3 class="menu"><center>DANH SÁCH SẢN PHẨM</center></h3>
             </div>
             <div style="padding-left: 110px; margin-bottom: 30px;">
-                <a href="addProducts.php"><button type="button" class="btn btn-outline-info">Add new product</button></a>
+                <a href="addProducts.php"><button type="button" class="btn btn-outline-info">Thêm sản phẩm mới</button></a>
             </div>
         <fieldset>
         <div class="container">
             <table class="table table-bordered">
                     <thead>
-                        <tr>
-                            <th class="table-success" scope="col">STT</th>
-                            <th class="table-success" scope="col">Product ID</th>
-                            <th class="table-success" scope="col">Name</th>
-                            <th class="table-success" scope="col">Detail</th>
-                            <th class="table-success" scope="col">Price</th>
-                            <th class="table-success" scope="col">Origin</th>
-                            <th class="table-success" scope="col">Image</th>
-                            <th class="table-success" scope="col">Quantity</th>
-                            <th class="table-success" scope="col">Update</th>
-                            <th class="table-success" scope="col">Delete</th>
+                        <tr style="text-align: center;">
+                            <th class="table-success" scope="col" >STT</th>
+                            <th class="table-success" scope="col">Mã sản phẩm</th>
+                            <th class="table-success" scope="col">Tên sản phẩm</th>
+                            <th class="table-success" scope="col">Chi tiết sản phẩn</th>
+                            <th class="table-success" scope="col">Giá sản phẩm</th>
+                            <th class="table-success" scope="col">Xuất Xứ</th>
+                            <th class="table-success" scope="col">Hình ảnh</th>
+                            <th class="table-success" scope="col">Số lượng</th>
+                            <th class="table-success" scope="col">Sửa</th>
+                            <th class="table-success" scope="col">Xoá</th>
                         </tr>
                     <?php
                         $i = 1;
