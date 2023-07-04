@@ -5,12 +5,16 @@
     if(isset($_POST['login_admin'])){
         $admin_name = $_POST['admin_name'];
         $admin_password = $_POST['admin_password'];
-        $admin_check = "select admin_name from admin where admin_name = '$admin_name' && admin_password = '$admin_password'";
+        $admin_check = "SELECT * FROM admin WHERE admin_name = '$admin_name' && admin_password = '$admin_password'";
         $admin_result = mysqli_query($con, $admin_check);
         $admin_num = mysqli_num_rows($admin_result);
 
+        foreach($admin_result as $r){
+            $id_kh =$r['stt_admin'];
+        }
         if($admin_num == 1){
             $_SESSION["admin_name"] = $admin_name;
+            setcookie("stt_admin", $id_kh, time() + 86400, "/");
             header("location: adminProductMange.php");
         }
         else{

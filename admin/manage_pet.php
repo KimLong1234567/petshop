@@ -22,17 +22,17 @@
         <nav>
             <div class="nav-links">
                 <ul>
-                    <li><a class="text-danger" href="manage_pet.php">Manage Pet</a></li>
-                    <li><a class="text-danger" href="adminProductMange.php">Manage Products</a></li>
-                    <li><a class="text-danger" href="manage_customer.php">Manage Users</a></li>
-                    <li><a class="text-danger" href="logout.php">Log out</a></li>
+                    <li><a class="text-danger" href="manage_pet.php">Quản lý thú cưng</a></li>
+                    <li><a class="text-danger" href="adminProductMange.php">Quản lý sản phẩm</a></li>
+                    <li><a class="text-danger" href="manage_customer.php">Quản lý người dùng</a></li>
+                    <li><a class="text-danger" href="logout.php">Đăng xuất</a></li>
                 </ul>
             </div>
         </nav>
     </section>
-        <h1 class="h1">PET MANAGEMENT</h1>
+        <h1 class="h1">QUẢN LÝ THÚ CƯNG</h1>
             <div class="">
-                <h3 class="menu"><center> List of pet</center></h3>
+                <h3 class="menu"><center> Danh sách thú cưng</center></h3>
             </div>
         <fieldset>
         <div class="container">
@@ -98,7 +98,7 @@
                                                     echo "0";
                                                 }
                                                 else{
-                                                    echo $row['pet_service_fee'];
+                                                    echo  number_format($row['pet_service_fee'], 0, ',', '.');
                                                 }
                                             ?>
                                         </td>

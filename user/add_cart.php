@@ -21,6 +21,9 @@
                     $rs = $con->query($sql);
                     foreach($rs as $row){
                         $pet_prod_price = ($row['pet_prod_price']);
+                        $sl = ($row['pet_prod_quantity']);
+                            // echo $sl;exit;
+                        $gia = ($row['pet_prod_price']);
                     }
                     // $soluong = (count($rs->fetch_assoc()));
                     // $rs = mysqli_query($con, $query);
@@ -31,7 +34,6 @@
                                 $rs = $con->query($sql);
                                     foreach($rs as $row){ 
                                         $pet_prod_id = ($row['pet_prod_id']);
-                                        $sl = ($row['pet_prod_quantity']);
                                     }
                                         $total= $quantity*$pet_prod_price;
                                         $userId = $_COOKIE['userId'];
@@ -42,20 +44,31 @@
                                             foreach($rs_order as $r ){
                                                 $i = ($r['pet_prod_id']);
                                                 $sl_daco = ($r['order_numberOfItem']);
+                                                $status = ($r['Status']);
+                                                // echo $sl_daco; exit;
                                             }
-                                                if($i == '' ){
+                                                if($i == '' || $status == '1'){
+                                                    $newItemPet = $sl - $quantity;
+                                                    // echo $newItemPet; exit;
                                                     $sql_insert= "INSERT INTO orders (order_id, order_date, order_total, order_numberOfItem, user_id, status, pet_prod_id) 
                                                     VALUES ('$random_char',CURRENT_TIMESTAMP(),'$total','$quantity','$userId','0','$id')";
                                                     $insert = $con->query($sql_insert);
+
+                                                    $sql_up = "UPDATE pet_product SET pet_prod_quantity = '$newItemPet' WHERE pet_prod_id='$id'";
+                                                    $up = $con->query($sql_up);
                                                     echo "<script>alert('This product added success!  with $quantity ');location.href='../view_cart.php'</script>";
                                                 }
                                                 else {
                                                     $newItem = $sl_daco + $quantity;
-                                                    $sql_update = "UPDATE orders SET order_numberOfItem = '$newItem' WHERE pet_prod_id='$id' AND user_id='$userId'";
+                                                    $total = $newItem*$gia;
+                                                    $sql_update = "UPDATE orders SET order_numberOfItem = '$newItem', order_total = '$total' WHERE pet_prod_id='$id' AND user_id='$userId'";
                                                     $update = $con->query($sql_update);
+                                                    
+                                                    $newItemPet = $sl - $quantity; //update so luong trong pet_product
+                                                    // echo $newItemPet;exit;
+                                                    $sql_up = "UPDATE pet_product SET pet_prod_quantity = '$newItemPet' WHERE pet_prod_id='$id'";
+                                                    $up = $con->query($sql_up);
                                                     echo "<script>alert('This product was add with $quantity ');location.href='../view_cart.php'</script>";
-                                                    $newItemPet = $sl - $newItem;
-                                                    $sql_up = "UPDATE pet_product SET pet_prod_quantity = '$newItemPet'";
                                                 }       
                             } else {
                                 echo "<script>alert('Can't find the product, Please contact us');location.href='../index.php'</script>";

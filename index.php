@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    include 'header.php';
+
     include 'connect.php';
 ?>
 <head>
@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- <link rel="stylesheet" href="./asset/css/index.css"> -->
+    <link rel="stylesheet" href="./asset/css/index.css">
     <style>
         .carousel-inner img {
     width: 100%;
@@ -22,6 +22,12 @@
     </style>
 </head>
 <body>
+    <div class="header" id="myHeader">
+        <?php
+           include 'header.php';
+        ?>
+    </div>
+<div class="content">
 <div class="container-sm-fluid" style="margin-left: 20px;">
         <div
             id="carousel-example-generic"
@@ -109,8 +115,8 @@
     <hr/>
     <h2 class="mt3 row justify-content-center" style="color: red;">Tất cả sản phẩm</h2> 
     <div class="" style="padding-bottom: 30px;">
-        <span style="padding-right: 30px;"><button type="button" class="btn btn-outline-success"><a href="./book_pet_date.php">Đặt lịch hẹn</a></button> </span> 
-        <span><button type="button" class="btn btn-outline-success"><a href="./view_book_pet.php">Quản lý lịch hẹn</a></button></span>
+        <span style="padding-right: 30px;"><button type="button" class="btn btn-outline-warning"><a href="./book_pet_date.php" style="text-decoration: none;">Đặt lịch hẹn</a></button> </span> 
+        <span><button type="button" class="btn btn-outline-warning"><a href="./view_book_pet.php" style="text-decoration: none;">Quản lý lịch hẹn</a></button></span>
     </div> 
     <div class="container-xs">
         <div class="row justify-content-center">
@@ -120,19 +126,19 @@
                 <div style="padding-bottom: 20px">
                     <form action="./index.php" method="GET">
                         <input type="hidden" name="search" value="dog"/>
-                        <button type="submit" class="btn btn-outline-primary"><a>Chó</a</button>
+                        <button type="submit" class="btn btn-outline-primary"><a>Chó</a></button>
                     </form>
                 </div>
                 <div style="padding-bottom: 20px">
                     <form action="./index.php" method="GET">
                         <input type="hidden" name="search" value="cat"/>
-                        <button type="submit" class="btn btn-outline-primary"><a>Mèo</a</button>
+                        <button type="submit" class="btn btn-outline-primary"><a>Mèo</a></button>
                     </form>
                 </div>
                 <div  style="padding-bottom: 20px">
                     <form action="./index.php" method="GET">
                         <input type="hidden" name="search" value="other"/>
-                        <button type="submit" class="btn btn-outline-primary"><a>Khác</a</button>
+                        <button type="submit" class="btn btn-outline-primary"><a>Khác</a></button>
                     </form>
                 </div>
             </div>
@@ -146,7 +152,22 @@
         </div>
     </div>
 </div>
+</div>
+<script>
+    window.onscroll = function() {myFunction()};
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+
+    function myFunction() {
+    if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
+}
+    </script>
 </body>
+
 <?php
     include 'footer.php'
 ?>

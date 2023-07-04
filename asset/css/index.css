@@ -6,3 +6,25 @@
 h2{
     color: red;
 }
+
+.header {
+  padding: 10px 16px;
+  color: #f1f1f1;
+  background-color: white;
+  z-index: 999;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+

@@ -16,8 +16,8 @@
         $userId = $_COOKIE['userId'];
         $sql = "SELECT * FROM users WHERE user_id = '$userId'";
         $sql_cart =  "SELECT o.order_total, o.order_numberOfItem, p.pet_prod_name, p.pet_prod_origin, p.pet_prod_image, 
-        p.pet_prod_price, p.pet_prod_quantity, p.pet_prod_id
-        FROM orders AS o, pet_product AS p WHERE o.pet_prod_id = p.pet_prod_id AND o.user_id = '$userId'";
+        p.pet_prod_price, p.pet_prod_quantity, p.pet_prod_id, o.Status
+        FROM orders AS o, pet_product AS p WHERE o.Status = 0 and o.pet_prod_id = p.pet_prod_id AND o.user_id = '$userId'";
         $que = $con->query($sql_cart);
 
         $res = $con->query($sql);
@@ -30,29 +30,30 @@
             <h1>Check out</h1>
                 <form action="finishpaid.php" method="post" enctype="multipart/form-data">
                     <fieldset>
-                        <legend>Personal information :</legend>
-                        <label>Your full name* : </label>
+                        <legend>Thông tin cá nhân :</legend>
+                        <label>Tên đầy đủ* : </label>
                         <input type="text" name="f-name" value="<?php echo $r['user_name']; ?>">
 
-                        <label>Your address *: </label>
+                        <label>Địa chỉ *: </label>
                         <input type="text" name="l-address" value="<?php echo $r['user_address']; ?>">
 
-                        <label>Your phone* : </label>
+                        <label>Số điện thoại* : </label>
                         <input type="text" name="phone" value="<?php echo $r['user_phone'];?>">
 
-                        <label>Your email* : </label>
+                        <label>Email* : </label>
                         <input type="text" name="email" value="<?php echo $r['user_email'];?>">
                         <br>
-                        Total Price:
+                        Tổng cộng:
                         <?php
                             function total_price($que){
                                 $total = 0;
                                 foreach($que as $key => $value){
                                     $total += $value['order_total'];
                                 }
-                                return $total;
+                                $number = number_format($total, 0, ',', '.');
+                                return $number;
                             };
-                            echo total_price($que);
+                            echo total_price($que) .'VND';
                         ?>
                         
                         <br>

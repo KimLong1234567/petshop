@@ -77,7 +77,7 @@
                                                     echo "Đang chờ xử lý";
                                                 }
                                                 else{
-                                                    echo $row['pet_service_fee'];
+                                                    echo  number_format($row['pet_service_fee'], 0, ',', '.');
                                                 }
                                             ?>
                                         </td>
@@ -93,7 +93,8 @@
                                 foreach($que as $key => $value){
                                     $total += $value['pet_service_fee'];
                                 }
-                                return $total;
+                                $format =  number_format($total, 0, ',', '.');
+                                return $format;
                             };
                             echo total_price($rs);
                         ?>

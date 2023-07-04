@@ -5,9 +5,11 @@
     //lay ma san pham 
     $code = $_GET['id'];
     //lay thong tin lien quan den san pham
-    $sql_show_prd = "SELECT * FROM pet_product WHERE pet_prod_id = '$code' ";
-    
+    $sql_show_prd = "SELECT * FROM pet_product WHERE pet_prod_id = '$code'";
+    $sql_select = "SELECT * FROM pet_category";
+    // echo $sql_show_prd; exit;
     // thuc thi cau lenh sql
+    $rs = mysqli_query($con,$sql_select);
     $result = mysqli_query($con,$sql_show_prd);
     //in ra form
     $r = mysqli_fetch_assoc($result);
@@ -18,6 +20,7 @@
         $pet_prod_detail = $_POST["pet_prod_detail"];
         $pet_prod_price = $_POST["pet_prod_price"];
         $pet_prod_origin = $_POST["pet_prod_origin"];
+        $pet_category_id = $_POST["pet_category_id"];
         $pet_prod_img = $_FILES["pet_prod_img"]['name'];
         $duoi = explode('.', $pet_prod_img); // tách chuỗi khi gặp dấu .
         $duoi = $duoi[(count($duoi) - 1)]; //lấy ra đuôi file
@@ -34,7 +37,9 @@
             pet_prod_quantity = '$pet_prod_quantity', 
             pet_prod_origin = '$pet_prod_origin', 
             pet_prod_image = '$pet_prod_img', 
-            pet_prod_price = '$pet_prod_price'
+            pet_prod_price = '$pet_prod_price',
+            pet_category_id = '$pet_category_id',
+            ngay_sua_doi = CURRENT_TIMESTAMP()
             WHERE pet_prod_id = '$pet_prod_id' ";
             // echo $sql_edit; exit;
         }
@@ -45,7 +50,9 @@
             pet_prod_detail = '$pet_prod_detail', 
             pet_prod_quantity = '$pet_prod_quantity', 
             pet_prod_origin = '$pet_prod_origin',  
-            pet_prod_price = '$pet_prod_price'
+            pet_prod_price = '$pet_prod_price',
+            pet_category_id = '$pet_category_id',
+            ngay_sua_doi = CURRENT_TIMESTAMP()
             WHERE pet_prod_id = '$pet_prod_id' ";
             // echo $sql_edit; exit;
         }
@@ -93,6 +100,22 @@
         <div class="form-group">
             <label for="origin" class="form-label">Xuất xứ</label>
             <input id="origin" type="text" placeholder="Nhập xuất xứ" name="pet_prod_origin" class="form-control" value="<?php echo $r['pet_prod_origin']; ?>">
+            <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="origin" class="form-label" >Loại sản phẩm</label>
+            <select name="pet_category_id" id="type" class="form-control">
+                <?php
+                    while ($row = mysqli_fetch_assoc($rs)) {
+                ?>
+                <option value="<?php echo $row['pet_category_id']; ?>">
+                                <?php echo $row['pet_category_name']; ?>
+                </option>
+                <?php 
+                    }
+                ?>
+            </select>
             <span class="form-message"></span>
         </div>
 

@@ -1,7 +1,7 @@
 <?php
     include '../connect.php';
 
-    $sql_show_prd = "SELECT * FROM pet_product";
+    $sql_show_prd = "SELECT * FROM pet_product ORDER BY stt DESC";
     $query_show_prd = mysqli_query($con,$sql_show_prd);
 ?>
 
@@ -39,8 +39,8 @@
         <div class="container">
             <table class="table table-bordered">
                     <thead>
-                        <tr style="text-align: center;">
-                            <th class="table-success" scope="col" >STT</th>
+                        <tr style="text-align: center;" >
+                            <th class="table-success" scope="col"  >STT</th>
                             <th class="table-success" scope="col">Mã sản phẩm</th>
                             <th class="table-success" scope="col">Tên sản phẩm</th>
                             <th class="table-success" scope="col">Chi tiết sản phẩn</th>
@@ -54,21 +54,21 @@
                     <?php
                         $i = 1;
                             while($row = mysqli_fetch_assoc($query_show_prd)){ ?>
-                                    <tr>
+                                    <tr style="text-align: center;">
                                         <td scope="row"><?php echo $i++; ?></td>
                                         <td><?php echo $row['pet_prod_id'] ?></td>
                                         <td><?php echo $row['pet_prod_name'] ?></td>
                                         <td><?php echo $row['pet_prod_detail']?></td>
-                                        <td><?php echo $row['pet_prod_price']?></td>
+                                        <td><?php echo number_format($row['pet_prod_price'], 0, ',', '.')?></td>
                                         <td><?php echo $row['pet_prod_origin'] ?></td>
                                         <td><img src="../asset/img/<?php echo $row['pet_prod_image']?>"> </td>
                                         <td><?php echo $row['pet_prod_quantity'] ?></td>
                                         <td><a href="update_product.php ?id=<?php echo $row['pet_prod_id'] ?>"><button
-                                                type="button" class="btn btn-sm btn-primary btn-create">Update
-                                                product</button></a></td>
+                                                type="button" class="btn btn-sm btn-primary btn-create">Sửa
+                                                sản phẩm</button></a></td>
                                         <td><a href="delete_product.php ?id=<?php echo $row['pet_prod_id'] ?>"><button
-                                                type="button" class="btn btn-sm btn-danger btn-create">Delete
-                                                product</button></a></td>
+                                                type="button" class="btn btn-sm btn-danger btn-create">Xoá
+                                                sản phẩm</button></a></td>
                                     </tr>
                                     <?php
                         }

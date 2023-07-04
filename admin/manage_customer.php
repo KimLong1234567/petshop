@@ -24,23 +24,23 @@ include("../connect.php");
         <nav>
             <div class="nav-links">
                 <ul>
-                    <li><a class="text-danger" href="manage_pet.php">Mange Pet</a></li>
-                    <li><a class="text-danger" href="adminProductMange.php">Mange product</a></li>
-                    <li><a class="text-danger" href="#">Manage User</a></li>
-                    <li><a class="text-danger" href="logout.php">Log out</a></li>
+                    <li><a class="text-danger" href="manage_pet.php">Quản lý thú cưng</a></li>
+                    <li><a class="text-danger" href="adminProductMange.php">Quản lý sản phẩm</a></li>
+                    <li><a class="text-danger" href="#">Quản lý người dùng</a></li>
+                    <li><a class="text-danger" href="logout.php">Đăng xuất</a></li>
                 </ul>
             </div>
         </nav>
     </section>
     <div class="container">
         <div class="row">
-            <h1 class="text-center">CUSTOMER MANAGEMENT</h1>
+            <h1 class="text-center">QUẢN LÝ NGƯỜI DÙNG</h1>
             <div class="col-md-12 col-md-offset-0">
                 <div class="panel panel-default panel-table">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col col-xs-6">
-                                <h3 class="panel-title">List of Customer</h3>
+                                <h3 class="panel-title">Danh sách người dùng</h3>
                             </div>
                         </div>
                     </div>
@@ -48,14 +48,14 @@ include("../connect.php");
                         <table class="table table-striped table-bordered table-list">
                             <fliedshet>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Name Customer's</th>
-                                    <th>Phone</th>
-                                    <th>Adress</th>
+                                    <th>Mã</th>
+                                    <th>Tên người dùng</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Địa chỉ</th>
                                     <th>Email</th>
-                                    <th>Detail</th>
-                                    <th>Pet</th>
-                                    <th>Delete</th>
+                                    <th>Chi Tiết</th>
+                                    <th>Thú cưng</th>
+                                    <th>Xoá</th>
                                 </tr>
                             </fliedshet>
                             <tbody>
@@ -72,9 +72,9 @@ include("../connect.php");
                                     <td>'.$row['user_phone'].'</td>
                                     <td>'.$row['user_address'].'</td>
                                     <td>'.$row['user_email'].'</td>
-                                    <td><a href="detail_order.php?id='.$row['user_id'].'">view</a></td>
-                                    <td><a href="detail_book.php?id=' .$row['user_id'].'">view</a></td>
-                                    <td><a href="delete_user.php?id='.$row['user_id'].'">Delete</td>                        
+                                    <td><a href="detail_order.php?id='.$row['user_id'].'">Xem</a></td>
+                                    <td><a href="detail_book.php?id=' .$row['user_id'].'">Xem</a></td>
+                                    <td><a href="delete_user.php?id='.$row['user_id'].'">Xoá</td>                        
                                 </tr>';
                                         }
                                     }

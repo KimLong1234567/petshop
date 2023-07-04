@@ -118,7 +118,46 @@ ALTER TABLE service DROP FOREIGN KEY pet_id;
 
 ALTER TABLE `service` CHANGE `service_id` `service_id` INT NOT NULL AUTO_INCREMENT;
 
+ALTER TABLE pet_product ADD stt INT AUTO_INCREMENT PRIMARY KEY;
+
+ALTER TABLE pet_product ADD ngay_sua_doi datetime;
+
+ALTER TABLE pet_product
+ADD CONSTRAINT unique_pet_id UNIQUE (pet_prod_id);
+
+ALTER TABLE orders ADD stt_order INT AUTO_INCREMENT PRIMARY KEY;
+
+ALTER TABLE orders ADD ngay_sua_doi_order datetime;
+
+ALTER TABLE orders ADD CONSTRAINT unique_order_id UNIQUE (order_id);
+
+ALTER TABLE admin ADD stt_admin INT AUTO_INCREMENT PRIMARY KEY;
+
+ALTER TABLE admin ADD ngay_sua_doi_order datetime;
+
+ALTER TABLE admin ADD CONSTRAINT unique_admin_name UNIQUE (admin_name);
+
+ALTER TABLE pet ADD stt_pet INT AUTO_INCREMENT PRIMARY KEY;
+
+ALTER TABLE pet ADD ngay_sua_doi_pet datetime;
+
+ALTER TABLE pet ADD CONSTRAINT unique_pet_id UNIQUE (pet_id);
+
 ALTER TABLE pet ADD pet_id varchar(50);
+
+ALTER TABLE pet_category ADD ngay_sua_doi_pet datetime;
+
+ALTER TABLE users ADD ngay_sua_doi_users datetime;
+
+ALTER TABLE pet_product ADD pet_category_id int;
+
+ALTER TABLE pet_product ADD CONSTRAINT pet_category_id
+FOREIGN KEY (pet_category_id)
+REFERENCES pet_category (pet_category_id);
+
+ALTER TABLE pet ADD CONSTRAINT user_id
+FOREIGN KEY (user_id)
+REFERENCES users (user_id);
 
 INSERT into admin (admin_name, admin_password) VALUES ("admin","admin"); 
 

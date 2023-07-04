@@ -20,14 +20,10 @@
         if($userId != ""){
             $sql =  "SELECT o.order_total, o.order_numberOfItem, p.pet_prod_name, p.pet_prod_origin, p.pet_prod_image, 
             p.pet_prod_price, p.pet_prod_quantity, p.pet_prod_id, o.Status
-            FROM orders AS o, pet_product AS p WHERE o.Status = 0 and o.pet_prod_id = p.pet_prod_id AND o.user_id = '$userId'";
-            // echo $sql;exit;
+            FROM orders AS o, pet_product AS p WHERE o.Status = 1 and o.pet_prod_id = p.pet_prod_id AND o.user_id = '$userId'";
             $que = $con->query($sql);
             $i=1;
             $r = mysqli_fetch_assoc($que);
-            if($r['Status'] !== '0'){
-                echo "<script>alert('Your cart is empty');location.href='./index.php'</script>";
-            }
         }
         else{
             echo "<script>alert('You not login yet');location.href='./user/sign_in.php'</script>";
@@ -38,11 +34,7 @@
            include 'header.php';
         ?>
     </div>
-    <div class="content">
-    <h1><center> GIỎ HÀNG</center></h1>
-    <div class="" style="padding-bottom: 30px;">
-        <span style="padding-right: 30px;"><button type="button" class="btn btn-outline-warning"><a href="./view_cart_his.php" style="text-decoration: none;">Lịch sử</a></button> </span> 
-    </div> 
+    <h1><center>LỊCH SỬ GIỎ HÀNG</center></h1>
     <!-- cart_iTem -->
     <div class="container border" style="margin-bottom: 30px;">
         <table class="table table-bordered">
@@ -55,6 +47,7 @@
                     
                     <th scope="col">Số lượng sản phẩm</th>
                     <th scope="col">Tổng cộng</th>
+                    <th scope="col">Trạng thái</th>
                     <th scope="col">Xoá sản phẩm</th>
                 </tr>
             
@@ -79,6 +72,16 @@
                     </td>
                     <td><small><?php echo $format = number_format($value['pet_prod_price'], 0, ',', '.') ?> X <?php echo $value['order_numberOfItem'] ?> </small> <br></td>
                     <td><?php  echo $for = number_format($value['order_total'], 0, ',','.')  ?></td>
+                    <td>
+                        <?php 
+                            if($value['Status'] == 1){
+                                echo "Đã thanh toán";
+                                }
+                            else{
+                                echo "Chưa thanh toán";
+                            }
+                        ?>
+                    </td>
                     <td>
                         <form action="./user/delete_item.php?id=<?php echo $id?>" method="POST" class="">
                             <button type="submit" class="btn btn-info" name="delete"><i class="far fa-trash-alt"></i></button>
@@ -115,10 +118,6 @@
             </table>
         </div>
         <br>
-        <a href="./user/checkout.php" style="text-decoration: none; margin-bottom: 20px" class="d-flex justify-content-end" >
-            <button type="button" class="btn btn-outline-primary" style="margin-left: 0;"><h3 style="color: yellow;">Tính Tiền</h3></button>
-        </a>
-    </div>
     </div>
 <script>
     window.onscroll = function() {myFunction()};

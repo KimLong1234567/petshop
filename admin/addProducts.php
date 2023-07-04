@@ -1,12 +1,16 @@
 <?php
 include("../connect.php");
 
+$sqlSelect = "SELECT * FROM pet_category";
+$rs = $con->query($sqlSelect);
+
 if (isset($_POST["submit"])) {
     $pet_prod_id = $_POST["pet_prod_id"];
     $pet_prod_name = $_POST["pet_prod_name"];
     $pet_prod_detail = $_POST["pet_prod_detail"];
     $pet_prod_price = $_POST["pet_prod_price"];
     $pet_prod_origin = $_POST["pet_prod_origin"];
+    $pet_category_id = $_POST["pet_category_id"];
     $pet_prod_img = $_FILES["pet_prod_img"]['name'];
     $duoi = explode('.', $pet_prod_img); // tách chuỗi khi gặp dấu .
     $duoi = $duoi[(count($duoi) - 1)]; //lấy ra đuôi file
@@ -25,8 +29,8 @@ if (isset($_POST["submit"])) {
             $message = "This product already exist, Please check it again!";
             echo "<script type='text/javascript'>alert('$message');</script>";
         } else {
-            $sql = "insert into pet_product (pet_prod_id, pet_prod_name, pet_prod_detail, pet_prod_price, pet_prod_origin, pet_prod_image, pet_prod_quantity)  
-            values ('$pet_prod_id', '$pet_prod_name', '$pet_prod_detail', '$pet_prod_price', '$pet_prod_origin', '$pet_prod_img', '$pet_prod_quatity' )";
+            $sql = "INSERT INTO pet_product (pet_prod_id, pet_prod_name, pet_prod_detail, pet_prod_price, pet_prod_origin, pet_prod_image, pet_prod_quantity, pet_category_id, ngay_sua_doi)  
+            VALUES ('$pet_prod_id', '$pet_prod_name', '$pet_prod_detail', '$pet_prod_price', '$pet_prod_origin', '$pet_prod_img', '$pet_prod_quatity','$pet_category_id',CURRENT_TIMESTAMP())";
             mysqli_query($con, $sql);
             move_uploaded_file($pet_prod_img_tmp, '../asset/img/' . $path_image);
             header('location:adminProductMange.php');
@@ -81,11 +85,28 @@ if (isset($_POST["submit"])) {
         </div>
 
         <div class="form-group">
+            <label for="origin" class="form-label" >Loại sản phẩm</label>
+            <select name="pet_category_id" id="type" class="form-control">
+                <?php
+                    while ($row = mysqli_fetch_assoc($rs)) {
+                ?>
+                <option value="<?php echo $row['pet_category_id']; ?>">
+                                <?php echo $row['pet_category_name']; ?>
+                </option>
+                <?php 
+                    }
+                ?>
+            </select>
+            <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
             <label for="image" class="form-label">Hình ảnh sản phẩm</label>
             <input id="image" type="file" name="pet_prod_img" class="form-control" accept="image/*">
             <span class="form-message"></span>
         </div>
 
+        
         <div class="form-group">
             <label for="price" class="form-label">Giá sản phẩm</label>
             <input id="price" type="number" placeholder="Nhập giá sản phẩm" name="pet_prod_price" class="form-control">
@@ -107,7 +128,7 @@ if (isset($_POST["submit"])) {
                 Validator.isRequired('#product_detail', 'Vui lòng nhập chi tiết sản phẩm'),
                 Validator.isRequired('#origin', 'Vui lòng nhập xuất xứ'),
                 Validator.isRequired('#number_item', 'Vui lòng nhập số lượng'),
-                Validator.isRequired('#image', 'Vui lòng nhập hình ảnh'),
+                // Validator.isRequired('#image', 'Vui lòng nhập hình ảnh'),
                 Validator.isRequired('#price', 'Vui lòng nhập giá tiền'),
             ]
         });

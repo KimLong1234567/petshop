@@ -50,7 +50,7 @@
                                 <?php foreach($rs as $key => $value): 
                                     ?>
                                     <td scope="row"><?php echo $value['pet_prod_name'];?></td>
-                                    <td><?php echo $value['pet_prod_price'];?></td>
+                                    <td><?php echo  number_format($value['pet_prod_price'], 0, ',', '.');?></td>
                                     <td>
                                         <img src="../asset/img/<?php echo $value['pet_prod_image'];?>"/>
                                     </td>
@@ -62,7 +62,7 @@
                                             <p><?php echo $value['order_numberOfItem']?></p>
                                         </div>
                                     </td>
-                                    <td><?php echo $value['order_total'];?></td>
+                                    <td><?php echo  number_format($value['order_total'], 0, ',', '.');?></td>
                                     <td>
                                         <?php if($value['Status'] == 1){
                                             echo "Đã thanh toán";
@@ -83,7 +83,8 @@
                                 foreach($que as $key => $value){
                                     $total += $value['order_total'];
                                 }
-                                return $total;
+                                $format =  number_format($total, 0, ',', '.');
+                                return $format;
                             };
                             echo total_price($rs);
                         ?>
