@@ -1,8 +1,13 @@
 <?php
     include '../connect.php';
-
+    session_start();
     $sql_show_prd = "SELECT * FROM pet_product ORDER BY stt DESC";
     $query_show_prd = mysqli_query($con,$sql_show_prd);
+    // Kiểm tra trạng thái đăng nhập của người dùng
+    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+        header('Location: login.php');
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>

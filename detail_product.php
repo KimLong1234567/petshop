@@ -50,7 +50,7 @@
                             <div class="_p-price-box">
                                 <div class="p-list">
                                     <span
-                                        class="price"><?php echo number_format($r['pet_prod_price'], 0,',','.') ?></span>
+                                        class="price"><?php echo number_format($r['pet_prod_price'], 0,',','.') .' VND' ?></span>
                                 </div>
                                 <form action="./user/add_cart.php?&id=<?php echo $pet_id?>" method="POST">
                                     <div class="_p-add-cart">
@@ -71,9 +71,6 @@
                                             <button class="btn-theme btn btn-success" name="add" tabindex="0">
                                                 <i class="fa fa-shopping-cart"></i> Thêm vào giỏ
                                             </button>
-                                            <input type="hidden" name="pid" value="18" />
-                                            <input type="hidden" name="price" value="850" />
-                                            <input type="hidden" name="url" value="" />
                                         </div>
                                     </div>
                                 </form>

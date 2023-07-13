@@ -63,7 +63,7 @@
                                     </td>
                                     <td>
                                         <?php 
-                                            if($row['pet_status'] == 1){
+                                            if($value['pet_status'] == 1){
                                                 echo "Đã khám";
                                             }
                                             else{
@@ -73,11 +73,11 @@
                                     </td>
                                     <td>
                                             <?php 
-                                                if($row['pet_service_fee'] == NULL){
+                                                if($value['pet_service_fee'] == NULL){
                                                     echo "Đang chờ xử lý";
                                                 }
                                                 else{
-                                                    echo  number_format($row['pet_service_fee'], 0, ',', '.');
+                                                    echo  number_format($value['pet_service_fee'], 0, ',', '.');
                                                 }
                                             ?>
                                         </td>

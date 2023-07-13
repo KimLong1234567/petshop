@@ -11,6 +11,22 @@
 </head>
 
 <body>
+    <?php
+        include "./connect.php";
+        if(isset($_COOKIE['userId'])){
+            $userId = $_COOKIE['userId'];
+            $sql = "SELECT * FROM users WHERE user_id = '$userId'";
+            // echo $sql; exit;
+            $rse = mysqli_query($con, $sql);
+            $rs = mysqli_fetch_assoc($rse);
+        }
+        // if(isset($userId)){
+        //     echo '<a class="p-2 bg-primary text-light border border-info rounded-left rounded-right" href="#" style="margin-right: 10px;">Hi '.$rs['user_name'] .'</a>';
+        // }
+        // else{
+        //     echo '<a class="p-2 bg-primary text-light border border-info rounded-left rounded-right" href="#" style="./user/sign_in.php">Đăng nhập</a>';
+        // }
+    ?>
 <div class="container-fluid">
         <div class="row"> 
             <div class="col-sm-3 ">
@@ -27,8 +43,23 @@
             <div class="col-lg-5 d-flex align-items-center justify-content-end">
                 <div class="d-flex">  
                     <a class="p-2 bg-primary text-light border border-info rounded-left rounded-right " href="./index.php" style="margin-right: 10px;">Trang chủ</a>
-                    <a class="p-2 bg-primary text-light border border-info rounded-left rounded-right" href="./user/sign_up.php" style="margin-right: 10px;">Đăng ký</a>
-                    <a class="p-2 bg-primary text-light border border-info rounded-left rounded-right" href="./user/sign_in.php" style="margin-right: 10px;">Đăng nhập</a>
+                        <?php
+                            if(isset($userId)){
+                                echo '';
+                            }
+                            else{
+                                echo '<a class="p-2 bg-primary text-light border border-info rounded-left rounded-right" href="./user/sign_up.php" style="margin-right: 10px;">Đăng Ký</a>';
+                            }
+                        ?>
+                        <?php
+                            if(isset($userId)){
+                                echo '<a class="p-2 bg-primary text-light border border-info rounded-left rounded-right" href="#" style="margin-right: 10px;">Hi '.$rs['user_name'] .'</a>';
+                            }
+                            else{
+                                echo '<a class="p-2 bg-primary text-light border border-info rounded-left rounded-right" href="./user/sign_in.php" style="margin-right: 10px;">Đăng nhập</a>';
+
+                            }
+                        ?>
                     <!-- <a class="p-2 bg-primary text-light border border-info" href="./admin/login.php">ADMIN</a> -->
                     <a class="p-2 bg-primary text-light border border-info rounded-left rounded-right" href="./view_cart.php" style="margin-right: 10px;">Giỏ hàng</a>
                     <a class="p-2 bg-primary text-light border border-info rounded-left rounded-right" href="" style="margin-right: 10px;">Liên Hệ</a>

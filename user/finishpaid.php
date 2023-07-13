@@ -14,6 +14,8 @@ require_once "../connect.php";
             // echo $sql_update; exit;
             $up = $con->query($sql_upUser);
             $que = $con->query($sql_update);
+            $rs = mysqli_fetch_assoc($que);
+            // SELECT * FROM orders AS o, users AS u WHERE o.user_id = '3' AND u.user_id = '3' AND o.pet_prod_id = '123';
             echo "<script>location.href='../printBill.php'</script>";
         }
         else{

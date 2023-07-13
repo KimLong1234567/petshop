@@ -74,7 +74,6 @@
                 <button type="submit" class="btn btn-info justify-content-end justify-content-end" name="add">ADD TO CART</button>
             </div>
         </form>
-        
     </div>
 </div>
 

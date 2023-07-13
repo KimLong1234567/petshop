@@ -27,6 +27,7 @@
             $r = mysqli_fetch_assoc($que);
             if($r['Status'] !== '0'){
                 echo "<script>alert('Your cart is empty');location.href='./index.php'</script>";
+                
             }
         }
         else{

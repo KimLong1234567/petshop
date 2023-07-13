@@ -1,8 +1,23 @@
 <?php
     session_start();
     require_once "../connect.php";
+
+    // if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    //     $admin_name = $_POST['admin_name'];
+    //     $password = $_POST['admin_password'];
+
+    //     // Kiểm tra thông tin đăng nhập của người dùng
+    //     if (authenticateUser($admin_name, $password)) {
+    //     // Lưu thông tin đăng nhập vào phiên làm việc
+    //         $_SESSION['loggedin'] = true;
+    //         $_SESSION['admin_name'] = $admin_name;
+    //     }else{
+    //         // Xử lý lỗi đăng nhập
+
+    //     }
+    // }
    
-    if(isset($_POST['login_admin'])){
+    if(isset($_POST['login_admin']) && isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true){
         $admin_name = $_POST['admin_name'];
         $admin_password = $_POST['admin_password'];
         $admin_check = "SELECT * FROM admin WHERE admin_name = '$admin_name' && admin_password = '$admin_password'";
