@@ -2,7 +2,11 @@
   <head>
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"></linkrel>
-    <?php 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"></linkrel>
+
+
+    <?php
+        include './header.php';
         include './connect.php';
         if(isset($_COOKIE['userId'])){
             $userId = $_COOKIE['userId'];
@@ -14,7 +18,7 @@
     ?>
 </head>
     <style>
-      body {
+      #body {
         text-align: center;
         padding: 40px 0;
         background: #EBF0F5;
@@ -47,16 +51,21 @@
         margin: 0 auto;
       }
     </style>
-    <body id="body">
-      <div class="card">
-      <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
-        <i class="checkmark">✓</i>
-      </div>
-        <h1 id="h1">Thanh toán thành công</h1> 
-        <p id="p">Chúng tôi đã nhận được đơn hàng của <?php echo $rs['user_name']  ?><br/> Mã đơn hàng của là <?php echo $rs['order_id'] ?></p>
-        <a href="./index.php" style="margin-bottom: 20px; text-decoration: none;">
-            <button type="button" class="btn btn-outline-success" style="margin: auto;"><h3 style="color: green;">Về trang chủ</h3></button>
-        </a>
+    <body>
+      <div id="body">
+        <div class="card">
+        <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
+          <i class="checkmark">✓</i>
+        </div>
+          <h1 id="h1">Thanh toán thành công</h1> 
+          <p id="p">Chúng tôi đã nhận được đơn hàng của <?php echo $rs['user_name']  ?><br/> Mã đơn hàng của là <?php echo $rs['order_id'] ?></p>
+          <a href="./index.php" style="margin-bottom: 20px; text-decoration: none;">
+              <button type="button" class="btn btn-outline-success" style="margin: auto;"><h3 style="color: green;">Về trang chủ</h3></button>
+          </a>
+        </div>
       </div>
     </body>
+    <?php 
+      include './footer.php';
+    ?>
 </html>

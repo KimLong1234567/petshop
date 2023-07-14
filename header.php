@@ -62,7 +62,7 @@
                         ?>
                     <!-- <a class="p-2 bg-primary text-light border border-info" href="./admin/login.php">ADMIN</a> -->
                     <a class="p-2 bg-primary text-light border border-info rounded-left rounded-right" href="./view_cart.php" style="margin-right: 10px;">Giỏ hàng</a>
-                    <a class="p-2 bg-primary text-light border border-info rounded-left rounded-right" href="" style="margin-right: 10px;">Liên Hệ</a>
+                    <a class="p-2 bg-primary text-light border border-info rounded-left rounded-right" href="./contact.php" style="margin-right: 10px;">Liên Hệ</a>
                     <a class="p-2 bg-primary text-light border border-info rounded-left rounded-right" href="./user/logout.php" style="margin-right: 10px;">Đăng xuất</a>
                 </div>
             </div>

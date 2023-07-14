@@ -62,6 +62,13 @@ CREATE TABLE service(
     pet_id int
 );
 
+CREATE TABLE contact(
+	stt int AUTO_INCREMENT PRIMARY KEY,
+    mess varchar(255),
+    name varchar(50),
+    email varchar(255)
+);
+
 ALTER TABLE order_detail
 ADD FOREIGN KEY (user_id) REFERENCES users(user_id);
 
@@ -158,6 +165,8 @@ REFERENCES pet_category (pet_category_id);
 ALTER TABLE pet ADD CONSTRAINT user_id
 FOREIGN KEY (user_id)
 REFERENCES users (user_id);
+
+ALTER TABLE contact ADD ngay_gui datetime;
 
 INSERT into admin (admin_name, admin_password) VALUES ("admin","admin"); 
 
