@@ -29,7 +29,7 @@
               
                     <ul><a href="" style="color: red;">Về chúng tôi</a></ul>
                 
-                    <ul><a href="" style="color: red;">Liên hệ</a></ul>
+                    <ul><a href="./contact.php" style="color: red;">Liên hệ</a></ul>
                 </ul>
             </div>
         </div>

@@ -41,9 +41,9 @@
     </div>
     <div class="content">
     <h1><center> GIỎ HÀNG</center></h1>
-    <div class="" style="padding-bottom: 30px;">
+    <!-- <div class="" style="padding-bottom: 30px;">
         <span style="padding-right: 30px;"><button type="button" class="btn btn-outline-warning"><a href="./view_cart_his.php" style="text-decoration: none;">Lịch sử</a></button> </span> 
-    </div> 
+    </div>  -->
     <!-- cart_iTem -->
     <div class="container border" style="margin-bottom: 30px;">
         <table class="table table-bordered">

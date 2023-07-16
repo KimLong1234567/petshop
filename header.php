@@ -54,6 +54,7 @@
                         <?php
                             if(isset($userId)){
                                 echo '<a class="p-2 bg-primary text-light border border-info rounded-left rounded-right" href="#" style="margin-right: 10px;">Hi '.$rs['user_name'] .'</a>';
+                                echo '<a class="p-2 bg-primary text-light border border-info rounded-left rounded-right" href="./view_cart_his.php" style="margin-right: 10px;">'.'Lịch Sử' .'</a>'; 
                             }
                             else{
                                 echo '<a class="p-2 bg-primary text-light border border-info rounded-left rounded-right" href="./user/sign_in.php" style="margin-right: 10px;">Đăng nhập</a>';

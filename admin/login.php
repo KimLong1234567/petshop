@@ -6,6 +6,10 @@
     //     $admin_name = $_POST['admin_name'];
     //     $password = $_POST['admin_password'];
 
+    //     function authenticateUser($admin_name, $password) {
+            
+    //     }
+
     //     // Kiểm tra thông tin đăng nhập của người dùng
     //     if (authenticateUser($admin_name, $password)) {
     //     // Lưu thông tin đăng nhập vào phiên làm việc
@@ -17,10 +21,11 @@
     //     }
     // }
    
-    if(isset($_POST['login_admin']) && isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true){
+    if(isset($_POST['login_admin'])){
+        // echo 'đã vào'; exit;
         $admin_name = $_POST['admin_name'];
         $admin_password = $_POST['admin_password'];
-        $admin_check = "SELECT * FROM admin WHERE admin_name = '$admin_name' && admin_password = '$admin_password'";
+        $admin_check = "SELECT admin_name, admin_password FROM admin WHERE admin_name = '$admin_name' && admin_password = '$admin_password'";
         $admin_result = mysqli_query($con, $admin_check);
         $admin_num = mysqli_num_rows($admin_result);
 
@@ -30,7 +35,7 @@
         if($admin_num == 1){
             $_SESSION["admin_name"] = $admin_name;
             setcookie("stt_admin", $id_kh, time() + 86400, "/");
-            header("location: adminProductMange.php");
+            header("location: ./adminProductMange.php");
         }
         else{
             $message = "Admin name or password is wrong! Please check again!";
@@ -45,7 +50,7 @@
         <link rel="stylesheet " href="../asset/css/user_login.css">
     </head>
     <body>
-    <form action="adminProductMange.php" method = "POST" class="form" id="form-1" style="margin-top: 30px;">
+    <form action="login.php" method = "POST" class="form" id="form-1" style="margin-top: 30px;">
             <h3 class="heading">ADMIN đăng nhập</h3>
             <div class="spacer"></div>
             <div class="form-group">
