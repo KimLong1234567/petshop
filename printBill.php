@@ -58,7 +58,7 @@
           <i class="checkmark">✓</i>
         </div>
           <h1 id="h1">Thanh toán thành công</h1> 
-          <p id="p">Chúng tôi đã nhận được đơn hàng của <?php echo $rs['user_name']  ?><br/> Mã đơn hàng của là <?php echo $rs['order_id'] ?></p>
+          <p id="p">Chúng tôi đã nhận được đơn hàng của <?php echo $rs['user_name']  ?><br/> <strong><i>Mã đơn hàng của là</i></strong> <?php echo $rs['order_id'] ?></p>
           <a href="./index.php" style="margin-bottom: 20px; text-decoration: none;">
               <button type="button" class="btn btn-outline-success" style="margin: auto;"><h3 style="color: green;">Về trang chủ</h3></button>
           </a>
